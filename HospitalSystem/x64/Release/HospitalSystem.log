@@ -1,0 +1,37 @@
+﻿  HospitalSystem.cpp
+  HospitalSystemDlg.cpp
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DatabaseManager.h(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 '/HospitalSystemDlg.cpp'을(를) 컴파일하는 중)
+  
+  SignUP.cpp
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DatabaseManager.h(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  (소스 파일 '/SignUP.cpp'을(를) 컴파일하는 중)
+  
+     C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.lib 라이브러리 및 C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.exp 개체를 생성하고 있습니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 361 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_driver.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_connection.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_native_driver_wrapper.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_native_driver_wrapper.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_uri.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_uri.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_metadata.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_metadata.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_warning.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_warning.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_prepared_statement.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_prepared_statement.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_statement.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_statement.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_debug.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_debug.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_client_api.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_client_api.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_util.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_util.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_art_resultset.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_art_resultset.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_resultbind.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_resultbind.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_ps_resultset.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_ps_resultset.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_ps_resultset_metadata.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_ps_resultset_metadata.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_parameter_metadata.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_parameter_metadata.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_resultset.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_resultset.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_art_rset_metadata.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_art_rset_metadata.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+mysqlcppconn-static.lib(mysql_resultset_metadata.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_resultset_metadata.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  HospitalSystem.vcxproj -> C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.exe

@@ -1,0 +1,4 @@
+﻿  DatabaseManager.cpp
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DatabaseManager.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/DatabaseManager.cpp'을(를) 컴파일하는 중)
+  
