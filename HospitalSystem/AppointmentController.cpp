@@ -12,10 +12,10 @@ std::vector<AppointmentDto> AppointmentController:: selectAppointment(std::strin
 	}
 }
 bool AppointmentController::addAppointment(std::string patientPhone,
-	std::string appointDate, std::string time,
-	std::string doctorId, std::string sympton) {
+	std::string appointDate, std::string doctorId, std::string sympton) {
 	AppointmentDB db;
 	if (db.Connect()) {
-		db.addAppointment(patientPhone, appointDate, time, doctorId, sympton);
-	}	
+		return db.addAppointment(patientPhone, appointDate,doctorId, sympton);
+	}
+	return false;
 }

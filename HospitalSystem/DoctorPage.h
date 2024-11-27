@@ -29,4 +29,5 @@ public:
 	CString getDoctorId();
 	//bool DoctorPageInitial();
 	CListCtrl m_list;
+	afx_msg void OnBnClickedButtonaddappointment();
 };

@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "afxdialogex.h"
-
+#include "AppointmentController.h"
 
 // AddAppointment 대화 상자
 
@@ -21,4 +21,6 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
 
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedButtonAppointment();
 };

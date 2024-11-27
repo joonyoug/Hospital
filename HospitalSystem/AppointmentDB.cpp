@@ -40,6 +40,7 @@ bool AppointmentDB::Connect() {
 
         
         stmt = con->createStatement();
+        stmt->execute("SET time_zone = '+09:00';");
         stmt->execute("set names " + charset);
         if (stmt) { delete stmt; stmt = nullptr; }
 
@@ -83,7 +84,7 @@ std::vector<AppointmentDto> AppointmentDB::todayAppointment(std::string doctorId
 }
 
 bool AppointmentDB::addAppointment(
-    std::string patientPhone, std::string appointDate, std::string time,
+    std::string patientPhone, std::string appointDate,
     std::string doctorId, std::string sympton) {
     sql::PreparedStatement* pstmt = nullptr;
     try {
