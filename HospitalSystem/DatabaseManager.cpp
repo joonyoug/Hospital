@@ -24,8 +24,8 @@ DatabaseManager::~DatabaseManager() {
 bool DatabaseManager::Connect() {
 	try {
 		sql::mysql::MySQL_Driver* driver = sql::mysql::get_driver_instance();
-		conn = driver->connect("tcp://127.0.0.1:3306", "root", "root");
-		conn->setSchema("Hospital");
+		conn = driver->connect("tcp://database-1.ct8gi4ac6qk6.ap-southeast-2.rds.amazonaws.com:3306", "admin", "qkralsdn!!");
+		conn->setSchema("hospital");
 
 
 		// db 한글 저장을 위한 셋팅 

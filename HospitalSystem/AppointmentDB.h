@@ -13,5 +13,6 @@ public:
 	std::vector<AppointmentDto>todayAppointment(std::string doctorId);
 	bool Connect();
 
+
 };
 

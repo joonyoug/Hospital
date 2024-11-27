@@ -4,7 +4,6 @@
 	AppointmentDB();
 	~AppointmentDB();
 	std::vector<Appointment> todayAppointment(std::string doctorId);
-
 */
 
 AppointmentDB::AppointmentDB() {
@@ -16,8 +15,8 @@ AppointmentDB::~AppointmentDB() {
 bool AppointmentDB::Connect() {
 	try {
 		sql::mysql::MySQL_Driver* driver = sql::mysql::get_driver_instance();
-		con = driver->connect("tcp://127.0.0.1:3306", "root", "root");
-		con->setSchema("Hospital");
+		con = driver->connect("tcp://database-1.ct8gi4ac6qk6.ap-southeast-2.rds.amazonaws.com:3306", "admin", "qkralsdn!!");
+		con->setSchema("hospital");
 
 		// db 한글 저장을 위한 셋팅 
 		stmt = con->createStatement();
@@ -34,7 +33,8 @@ std::vector<AppointmentDto> AppointmentDB::todayAppointment(std::string doctorId
 	sql::PreparedStatement *pstmt = nullptr;
 	std::vector<AppointmentDto> appointments;
 	try {
-		std::string query = "SELECT patient_phone_number, appointment_date, symptoms FROM appointment WHERE doctor_id = ? AND DATE(appointment_date) = CURDATE()";
+		std::string query = 
+			"SELECT a.patient_phone_number, a.appointment_date, a.symptoms, p.name FROM appointment a JOIN patient p ON a.patient_phone_number = p.phone_number WHERE a.doctor_id = ? AND DATE(a.appointment_date) = CURDATE();";
 		pstmt = con->prepareStatement(query);
 		pstmt->setString(1, doctorId);
 		sql::ResultSet* res = pstmt->executeQuery();
@@ -42,8 +42,14 @@ std::vector<AppointmentDto> AppointmentDB::todayAppointment(std::string doctorId
 			/*(std::string doctorid, std::string patientid,
 		std::string appointDate,std::string symptons);
 			*/
-			AppointmentDto app(doctorId, res->getString("patient_phone_number"),
-				res->getString("appointment_date"), res->getString("symptoms"));
+			AppointmentDto app(
+				doctorId, 
+				res->getString("patient_phone_number"),
+				res->getString("appointment_date"),
+				res->getString("symptoms"));
+			app.patientName = res->getString("name");
+
+
 			appointments.push_back(app);
 		}
 		return appointments;
@@ -52,10 +58,8 @@ std::vector<AppointmentDto> AppointmentDB::todayAppointment(std::string doctorId
 		std::cout << e.what() << std::endl;
 		delete pstmt;
 	}
-
-
-
 }
+
 
 
 

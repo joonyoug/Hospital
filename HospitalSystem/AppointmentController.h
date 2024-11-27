@@ -9,9 +9,5 @@ class AppointmentController
 public:
 	std::vector<AppointmentDto> selectAppointment(std::string doctorId);
 	
-
-
-
-
 };
 

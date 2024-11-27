@@ -10,5 +10,4 @@ std::vector<AppointmentDto> AppointmentController:: selectAppointment(std::strin
 	if (db.Connect()) {
 		return db.todayAppointment(doctorId);
 	}
-
 }

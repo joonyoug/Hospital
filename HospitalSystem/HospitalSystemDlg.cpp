@@ -166,7 +166,7 @@ void CHospitalSystemDlg::OnBnClickedButtonlogin()
 	LoginController controller;
 	if (controller.Login(std::string(CT2A(id)), std::string(CT2A(pw)))) {
 		AfxMessageBox(_T("로그인"));
-		DoctorPage dpage;
+		DoctorPage dpage(id);
 		dpage.DoModal();
 		this->EndDialog(IDOK);
 	}

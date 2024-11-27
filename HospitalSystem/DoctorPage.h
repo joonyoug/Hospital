@@ -9,7 +9,7 @@ class DoctorPage : public CDialogEx
 	DECLARE_DYNAMIC(DoctorPage)
 
 public:
-	DoctorPage(CWnd* pParent = nullptr);   // 표준 생성자입니다.
+	DoctorPage(CString doctorId,CWnd* pParent = nullptr);   // 표준 생성자입니다.
 	BOOL OnInitDialog();
 	virtual ~DoctorPage();
 
@@ -17,6 +17,8 @@ public:
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_DIALOG_Doctor };
 #endif
+private:
+	CString doctorId;
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
@@ -24,7 +26,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	// 리스트컨트롤
-	
+	CString getDoctorId();
 	//bool DoctorPageInitial();
 	CListCtrl m_list;
 };
