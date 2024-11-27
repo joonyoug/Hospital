@@ -84,6 +84,9 @@
     <ClInclude Include="DoctorPage.h">
       <Filter>소스 파일\View</Filter>
     </ClInclude>
+    <ClInclude Include="AddAppointment.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HospitalSystem.cpp">
@@ -130,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="DoctorPage.cpp">
       <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="AddAppointment.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

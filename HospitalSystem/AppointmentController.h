@@ -8,6 +8,7 @@ class AppointmentController
 {
 public:
 	std::vector<AppointmentDto> selectAppointment(std::string doctorId);
-	
+	bool addAppointment(std::string patientPhone, std::string appointDate, std::string time,
+		std::string doctorId, std::string sympton);
 };
 

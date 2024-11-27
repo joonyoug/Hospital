@@ -35,7 +35,6 @@ BOOL DoctorPage::OnInitDialog()
 	std::vector<AppointmentDto> apdto = apc.selectAppointment(std::string
 		(CT2A(this->getDoctorId())));
 
-
 	for (size_t i = 0; i < apdto.size(); ++i)
 	{
 		// AppointmentDto 객체를 사용하여 리스트 뷰에 항목 추가

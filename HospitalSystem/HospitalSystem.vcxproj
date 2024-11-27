@@ -186,6 +186,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AddAppointment.h" />
     <ClInclude Include="Appointment.h" />
     <ClInclude Include="AppointmentController.h" />
     <ClInclude Include="AppointmentDB.h" />
@@ -206,6 +207,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddAppointment.cpp" />
     <ClCompile Include="Appointment.cpp" />
     <ClCompile Include="AppointmentController.cpp" />
     <ClCompile Include="AppointmentDB.cpp" />
