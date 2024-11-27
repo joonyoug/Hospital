@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\Database">
       <UniqueIdentifier>{0c703775-fa23-4b72-9d6d-84053d698667}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Dto">
+      <UniqueIdentifier>{5e2239a5-057b-4198-a75b-d567f6175d32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HospitalSystemDlg.h">
@@ -45,7 +48,7 @@
     <ClInclude Include="DatabaseManager.h">
       <Filter>소스 파일\Database</Filter>
     </ClInclude>
-    <ClInclude Include="Member.h">
+    <ClInclude Include="Doctor.h">
       <Filter>소스 파일\Model</Filter>
     </ClInclude>
     <ClInclude Include="LoginController.h">
@@ -58,6 +61,27 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="SignUP.h">
+      <Filter>소스 파일\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Patients.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Appointment.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="AppointmentDB.h">
+      <Filter>소스 파일\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="MedicalHistory.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="AppointmentController.h">
+      <Filter>소스 파일\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="AppointmentDto.h">
+      <Filter>소스 파일\Dto</Filter>
+    </ClInclude>
+    <ClInclude Include="DoctorPage.h">
       <Filter>소스 파일\View</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,7 +98,7 @@
     <ClCompile Include="DatabaseManager.cpp">
       <Filter>소스 파일\Database</Filter>
     </ClCompile>
-    <ClCompile Include="Member.cpp">
+    <ClCompile Include="Doctor.cpp">
       <Filter>소스 파일\Model</Filter>
     </ClCompile>
     <ClCompile Include="LoginController.cpp">
@@ -84,6 +108,27 @@
       <Filter>소스 파일\Controller</Filter>
     </ClCompile>
     <ClCompile Include="SignUP.cpp">
+      <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Patients.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Appointment.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="AppointmentDB.cpp">
+      <Filter>소스 파일\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="MedicalHistory.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="AppointmentController.cpp">
+      <Filter>소스 파일\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="AppointmentDto.cpp">
+      <Filter>소스 파일\Dto</Filter>
+    </ClCompile>
+    <ClCompile Include="DoctorPage.cpp">
       <Filter>소스 파일\View</Filter>
     </ClCompile>
   </ItemGroup>

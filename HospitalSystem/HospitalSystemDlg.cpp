@@ -9,6 +9,7 @@
 #include "afxdialogex.h"
 #include "LoginController.h"
 #include "SignUP.h"
+#include "DoctorPage.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -155,9 +156,6 @@ HCURSOR CHospitalSystemDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
-
-
-
 void CHospitalSystemDlg::OnBnClickedButtonlogin()
 {
 	CString id;
@@ -168,6 +166,9 @@ void CHospitalSystemDlg::OnBnClickedButtonlogin()
 	LoginController controller;
 	if (controller.Login(std::string(CT2A(id)), std::string(CT2A(pw)))) {
 		AfxMessageBox(_T("로그인"));
+		DoctorPage dpage;
+		dpage.DoModal();
+		this->EndDialog(IDOK);
 	}
 	else {
 		AfxMessageBox(_T("잘못입력했습니다."));

@@ -33,6 +33,5 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButtonlogin();
-	afx_msg void OnBnClickedCancel();
 	afx_msg void OnBnClickedRegister();
 };

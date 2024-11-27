@@ -8,7 +8,7 @@ DatabaseManager();
 ~DatabaseManager();
 
 bool Connect();
-bool ExecuteInsertQuery(const Member& member); //회원가입
+bool ExecuteInsertQuery(const Doctor& member); //회원가입
 bool ExcuteLoginQuery(const std::string id,   //로그인
 const std::string pw);
 };
@@ -25,7 +25,7 @@ bool DatabaseManager::Connect() {
 	try {
 		sql::mysql::MySQL_Driver* driver = sql::mysql::get_driver_instance();
 		conn = driver->connect("tcp://127.0.0.1:3306", "root", "root");
-		conn->setSchema("test1234");
+		conn->setSchema("Hospital");
 
 
 		// db 한글 저장을 위한 셋팅 
@@ -39,10 +39,10 @@ bool DatabaseManager::Connect() {
 		return false;
 	}
 }
-bool DatabaseManager::ExecuteInsertQuery(const Member& member) {
+bool DatabaseManager::ExecuteInsertQuery(const Doctor& member) {
 	sql::PreparedStatement* pstmt = nullptr;
 	try {
-		std::string query = "insert into member (id,pw,name,phone_number,employee_number) values(?,?,?,?,?)";
+		std::string query = "insert into doctor (id,password,name,phone_number,employee_number) values(?,?,?,?,?)";
 		pstmt = this->conn->prepareStatement(query);
 		
 		pstmt->setString(1, member.getId());
@@ -64,7 +64,7 @@ bool DatabaseManager::ExcuteLoginQuery(const std::string id,   //로그인
 	const std::string pw) {
 	sql::PreparedStatement* pstmt =nullptr;
 	try {
-		std::string query = "select * from member where id = ? and pw =?";
+		std::string query = "select * from doctor where id = ? and password =?";
 		pstmt = this->conn->prepareStatement(query);
 		pstmt->setString(1, id);
 		pstmt->setString(2, pw);
@@ -91,7 +91,7 @@ bool DatabaseManager::ExcuteLoginQuery(const std::string id,   //로그인
 }
 bool DatabaseManager::CheckIdQuery(const std::string id) {
 
-	std::string query = "select * from member where id =?";
+	std::string query = "select * from doctor where id =?";
 	sql::PreparedStatement *pstmt = nullptr;
 	try {
 		pstmt = conn->prepareStatement(query);

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "SignUpController.h"
-
+#include "Doctor.h"
 /*
 	회원가입 
 	DB의 insertQuery 호출 성공시 true
@@ -12,7 +12,7 @@ bool SignUpController::SignUP(std::string id,std::string pw,
 		||employeeNumber.empty()) { return false; }
 	DatabaseManager db;
 	if (db.Connect()) {
-		Member m(id, pw, name, phoneNumber,employeeNumber);
+		Doctor m(id, pw, name, phoneNumber,employeeNumber);
 		return db.ExecuteInsertQuery(m);
 	}
 	return false;
