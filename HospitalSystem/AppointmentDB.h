@@ -2,6 +2,7 @@
 #include <mysql/jdbc.h>
 #include <vector>
 #include "AppointmentDto.h"
+#include <nlohmann/json.hpp>
 class AppointmentDB
 {
 private:
