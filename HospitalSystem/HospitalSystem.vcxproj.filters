@@ -147,6 +147,10 @@
     <None Include="res\HospitalSystem.rc2">
       <Filter>리소스 파일</Filter>
     </None>
+    <None Include="config.json">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\HospitalSystem.ico">

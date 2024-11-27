@@ -1,6 +1,9 @@
 #pragma once
 #include <mysql/jdbc.h>
 #include "Doctor.h";
+#include <nlohmann/json.hpp> 
+#include <fstream> 
+
 
 class DatabaseManager
 {
