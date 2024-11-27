@@ -59,7 +59,24 @@ std::vector<AppointmentDto> AppointmentDB::todayAppointment(std::string doctorId
 		delete pstmt;
 	}
 }
-
+bool AppointmentDB::addAppointment(
+	std::string patientPhone, std::string appointDate, std::string time,
+	std::string doctorId, std::string sympton) {
+	sql::PreparedStatement * pstmt = nullptr;
+	try {
+		std::string query = "INSERT INTO appointment (patient_phone_number, doctor_id, appointment_date, symptoms) VALUES(?,?,?,?);";
+		pstmt = con->prepareStatement(query);
+		pstmt->setString(1, patientPhone);
+		pstmt->setString(2, doctorId);
+		pstmt->setString(3, appointDate);
+		pstmt->setString(4, sympton);
+		pstmt->executeQuery();
+	}
+	catch (sql::SQLException e) {
+		delete pstmt;
+		return false;
+	}
+}
 
 
 
