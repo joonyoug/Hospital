@@ -6,6 +6,7 @@
 #include "afxdialogex.h"
 #include "DoctorPage.h"
 #include "AppointmentController.h"
+#include "AddAppointment.h"
 #include <vector>
 
 // DoctorPage 대화 상자
@@ -59,6 +60,14 @@ void DoctorPage::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST1, m_list);
 }
 BEGIN_MESSAGE_MAP(DoctorPage, CDialogEx)
+	ON_BN_CLICKED(IDC_BUTTON_addAppointment, &DoctorPage::OnBnClickedButtonaddappointment)
 END_MESSAGE_MAP()
 
 // DoctorPage 메시지 처리기
+
+
+void DoctorPage::OnBnClickedButtonaddappointment()
+{
+	AddAppointment ap;
+	ap.DoModal();
+}

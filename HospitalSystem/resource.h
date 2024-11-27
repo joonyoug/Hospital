@@ -10,7 +10,6 @@
 #define IDD_DIALOG_SignUP               130
 #define IDD_DIALOG_Doctor               132
 #define IDD_DIALOG1                     136
-#define IDD_DIALOG2                     138
 #define IDD_DIALOG_Add_Appointment      138
 #define ID_Button_login                 1000
 #define IDC_EDIT_INput_Id               1001
@@ -25,6 +24,12 @@
 #define IDC_LIST1                       1010
 #define IDC_BUTTON_AddPatient           1012
 #define IDC_BUTTON_addAppointment       1013
+#define IDC_EDIT_Name                   1014
+#define IDC_EDIT_Phone                  1015
+#define IDC_EDIT_DoctorId               1016
+#define IDC_EDIT_symptoms               1017
+#define IDC_EDIT_Date                   1018
+#define IDC_BUTTON_Appointment          1019
 
 // Next default values for new objects
 // 
@@ -32,7 +37,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        140
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1014
+#define _APS_NEXT_CONTROL_VALUE         1020
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

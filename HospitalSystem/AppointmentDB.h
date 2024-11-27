@@ -15,7 +15,7 @@ public:
 	bool Connect();
 	bool addAppointment(
 		std::string patientPhone, std::string appointDate, 
-		std::string time, std::string doctorId,std::string sympton);
+		 std::string doctorId,std::string sympton);
 
 
 };
