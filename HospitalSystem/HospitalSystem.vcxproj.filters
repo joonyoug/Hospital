@@ -87,6 +87,21 @@
     <ClInclude Include="AddAppointment.h">
       <Filter>소스 파일\View</Filter>
     </ClInclude>
+    <ClInclude Include="Vaccinations.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Allergy.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Vitalsign_status.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Payments.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Operations.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HospitalSystem.cpp">
@@ -136,6 +151,21 @@
     </ClCompile>
     <ClCompile Include="AddAppointment.cpp">
       <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Vaccinations.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Allergy.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Vitalsign_status.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Payments.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Operations.cpp">
+      <Filter>소스 파일\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
