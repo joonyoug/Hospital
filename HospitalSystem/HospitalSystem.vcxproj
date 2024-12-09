@@ -187,19 +187,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AddAppointment.h" />
+    <ClInclude Include="Addpatients.h" />
+    <ClInclude Include="AlreadyPatient.h" />
     <ClInclude Include="Appointment.h" />
     <ClInclude Include="AppointmentController.h" />
     <ClInclude Include="AppointmentDB.h" />
     <ClInclude Include="AppointmentDto.h" />
+    <ClInclude Include="ChartRecords.h" />
     <ClInclude Include="DatabaseManager.h" />
-    <ClInclude Include="DoctorPage.h" />
+    <ClInclude Include="DBconnect.h" />
+    <ClInclude Include="HosipitalOffice.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="HospitalSystem.h" />
     <ClInclude Include="HospitalSystemDlg.h" />
     <ClInclude Include="LoginController.h" />
     <ClInclude Include="Doctor.h" />
-    <ClInclude Include="MedicalHistory.h" />
-    <ClInclude Include="Patients.h" />
+    <ClInclude Include="Patient.h" />
+    <ClInclude Include="PatientController.h" />
+    <ClInclude Include="PatientDb.h" />
+    <ClInclude Include="PatientDto.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SignUP.h" />
@@ -208,18 +214,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAppointment.cpp" />
+    <ClCompile Include="Addpatients.cpp" />
+    <ClCompile Include="AlreadyPatient.cpp" />
     <ClCompile Include="Appointment.cpp" />
     <ClCompile Include="AppointmentController.cpp" />
     <ClCompile Include="AppointmentDB.cpp" />
     <ClCompile Include="AppointmentDto.cpp" />
+    <ClCompile Include="ChartRecords.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
-    <ClCompile Include="DoctorPage.cpp" />
+    <ClCompile Include="DBconnect.cpp" />
+    <ClCompile Include="HosipitalOffice.cpp" />
     <ClCompile Include="HospitalSystem.cpp" />
     <ClCompile Include="HospitalSystemDlg.cpp" />
     <ClCompile Include="LoginController.cpp" />
     <ClCompile Include="Doctor.cpp" />
-    <ClCompile Include="MedicalHistory.cpp" />
-    <ClCompile Include="Patients.cpp" />
+    <ClCompile Include="Patient.cpp" />
+    <ClCompile Include="PatientController.cpp" />
+    <ClCompile Include="PatientDb.cpp" />
+    <ClCompile Include="PatientDto.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

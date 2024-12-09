@@ -11,11 +11,11 @@ std::vector<AppointmentDto> AppointmentController:: selectAppointment(std::strin
 		return db.todayAppointment(doctorId);
 	}
 }
-bool AppointmentController::addAppointment(std::string patientPhone,
-	std::string appointDate, std::string doctorId, std::string sympton) {
+bool AppointmentController::addAppointment(std::string residentNUmber, std::string name, std::string date,
+	std::string employeeNumber, std::string CC) {
 	AppointmentDB db;
 	if (db.Connect()) {
-		return db.addAppointment(patientPhone, appointDate,doctorId, sympton);
+		return db.addAppointment(residentNUmber, name,date, employeeNumber, CC);
 	}
 	return false;
 }

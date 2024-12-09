@@ -11,8 +11,9 @@ class AddAppointment : public CDialog
 public:
 	AddAppointment(CWnd* pParent = nullptr);   // 표준 생성자입니다.
 	virtual ~AddAppointment();
+	CWnd* pParnet;
 
-// 대화 상자 데이터입니다.
+	// 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_DIALOG_Add_Appointment };
 #endif
@@ -23,4 +24,10 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButtonAppointment();
+	void drawComboBox();
+	virtual BOOL OnInitDialog();
+	CString getTime();
+	CString getComboBox();
+	void setParent(CWnd* pParent);
+	void NotifyParent();
 };

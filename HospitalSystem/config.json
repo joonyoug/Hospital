@@ -3,7 +3,7 @@
 		"host": "tcp://database-1.ct8gi4ac6qk6.ap-southeast-2.rds.amazonaws.com:3306",
 		"username": "admin",
 		"password": "qkralsdn!!",
-		"schema": "hospital",
+		"schema": "EMR",
 		"charset": "euckr"
 	}
 }

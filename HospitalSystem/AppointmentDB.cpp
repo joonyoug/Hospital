@@ -6,98 +6,92 @@
 using json = nlohmann::json;
 
 AppointmentDB::AppointmentDB() {
-    this->con = nullptr;
+    
 }
 
 AppointmentDB::~AppointmentDB() {
-    delete this->con;
+   
 }
-
-bool AppointmentDB::Connect() {
-    try {
-        
-        std::ifstream inputFile("config.json");
-        if (!inputFile.is_open()) {
-            std::cerr << "파일을 열 수 없습니다!" << std::endl;
-            return false;
-        }
-
-        
-        json config;
-        inputFile >> config;
-
-        
-        std::string host = config["database"]["host"];
-        std::string username = config["database"]["username"];
-        std::string password = config["database"]["password"];
-        std::string schema = config["database"]["schema"];
-        std::string charset = config["database"]["charset"];
-
-        // MySQL 연결
-        sql::mysql::MySQL_Driver* driver = sql::mysql::get_driver_instance();
-        con = driver->connect(host, username, password);
-        con->setSchema(schema);
-
-        
-        stmt = con->createStatement();
-        stmt->execute("SET time_zone = '+09:00';");
-        stmt->execute("set names " + charset);
-        if (stmt) { delete stmt; stmt = nullptr; }
-
-        return true;
-    }
-    catch (sql::SQLException& e) {
-        std::cout << "SQL 오류: " << e.what() << std::endl;
-        return false;
-    }
-    catch (const std::exception& e) {
-        std::cout << "일반 오류: " << e.what() << std::endl;
-        return false;
-    }
-}
-
 std::vector<AppointmentDto> AppointmentDB::todayAppointment(std::string doctorId) {
     sql::PreparedStatement* pstmt = nullptr;
     std::vector<AppointmentDto> appointments;
     try {
+        // 쿼리 수정: 'phone_number'를 SELECT에 포함
         std::string query =
-            "SELECT a.patient_phone_number, a.appointment_date, a.symptoms, p.name FROM appointment a JOIN patient p ON a.patient_phone_number = p.phone_number WHERE a.doctor_id = ? AND DATE(a.appointment_date) = CURDATE();";
-        pstmt = con->prepareStatement(query);
-        pstmt->setString(1, doctorId);
-        sql::ResultSet* res = pstmt->executeQuery();
-        while (res->next()) {
-            AppointmentDto app(
-                doctorId,
-                res->getString("patient_phone_number"),
-                res->getString("appointment_date"),
-                res->getString("symptoms"));
-            app.patientName = res->getString("name");
+            "SELECT a.resident_number, a.date, a.cc, p.name, p.phone_number "
+            "FROM appointments a "
+            "JOIN patients p ON a.resident_number = p.resident_number "
+            "WHERE a.employee_number = ? "
+            "AND DATE(a.date) = CURDATE();";
 
-            appointments.push_back(app);
+        pstmt = conn->prepareStatement(query);
+        pstmt->setString(1, doctorId);
+
+        sql::ResultSet* res = pstmt->executeQuery();
+
+        while (res->next()) {
+            // AppointmentDto 객체 생성
+            AppointmentDto app(
+                doctorId,                          // 의사 아이디
+                res->getString("date"),             // 예약 날짜
+                res->getString("cc"),               // 증상
+                res->getString("phone_number")      // 환자 전화번호
+            );
+            app.patientName = res->getString("name");  // 환자 이름 설정
+            appointments.push_back(app);  // 벡터에 추가
         }
+
+        // ResultSet 메모리 해제
+        delete res;
+
         return appointments;
     }
-    catch (sql::SQLException e) {
-        std::cout << e.what() << std::endl;
-        delete pstmt;
+    catch (sql::SQLException& e) {
+        std::cout << "SQL 오류: " << e.what() << std::endl;
+
+        // 예외 발생 시 PreparedStatement 객체 삭제
+        if (pstmt) {
+            delete pstmt;
+        }
+
+        return appointments;  // 빈 벡터를 반환
+    }
+    catch (std::exception& e) {
+        std::cout << "일반 오류: " << e.what() << std::endl;
+
+        // 예외 발생 시 PreparedStatement 객체 삭제
+        if (pstmt) {
+            delete pstmt;
+        }
+
+        return appointments;  // 빈 벡터를 반환
     }
 }
 
+
+
 bool AppointmentDB::addAppointment(
-    std::string patientPhone, std::string appointDate,
-    std::string doctorId, std::string sympton) {
+    std::string residentNUmber, std::string name, std::string date,
+    std::string employeeNumber, std::string CC) {
     sql::PreparedStatement* pstmt = nullptr;
     try {
-        std::string query = "INSERT INTO appointment (patient_phone_number, doctor_id, appointment_date, symptoms) VALUES(?,?,?,?);";
-        pstmt = con->prepareStatement(query);
-        pstmt->setString(1, patientPhone);
-        pstmt->setString(2, doctorId);
-        pstmt->setString(3, appointDate);
-        pstmt->setString(4, sympton);
-        pstmt->executeQuery();
+        std::string query = "INSERT INTO appointments (resident_number, employee_number, date, CC) VALUES(?,?,?,?);";
+        pstmt = conn->prepareStatement(query);
+        pstmt->setString(1, residentNUmber);
+        pstmt->setString(2, employeeNumber);
+        pstmt->setString(3, date);
+        pstmt->setString(4, CC);
+
+        pstmt->executeUpdate();  
+
+        delete pstmt;  // 
+        return true;
     }
-    catch (sql::SQLException e) {
-        delete pstmt;
+    catch (sql::SQLException& e) {
+        if (pstmt) {
+            delete pstmt;  
+        }
+        std::cout << "SQL 오류: " << e.what() << std::endl;
         return false;
     }
 }

@@ -9,7 +9,7 @@
 #include "afxdialogex.h"
 #include "LoginController.h"
 #include "SignUP.h"
-#include "DoctorPage.h"
+#include "HosipitalOffice.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -163,12 +163,15 @@ void CHospitalSystemDlg::OnBnClickedButtonlogin()
 	CString pw;
 	GetDlgItemText(IDC_EDIT_INput_PW, pw);
 
+
 	LoginController controller;
 	if (controller.Login(std::string(CT2A(id)), std::string(CT2A(pw)))) {
 		AfxMessageBox(_T("로그인"));
-		DoctorPage dpage(id);
-		dpage.DoModal();
-		this->EndDialog(IDOK);
+		this->EndDialog(IDOK);  // 로그인 창 닫기
+
+		// 의사 페이지 열기 (모달 다이얼로그)
+		HosipitalOffice dpage(id);  // 로그인 정보 또는 필요한 파라미터를 넘김
+		dpage.DoModal();  // 의사 페이지 열기
 	}
 	else {
 		AfxMessageBox(_T("잘못입력했습니다."));

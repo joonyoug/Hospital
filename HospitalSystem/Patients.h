@@ -3,12 +3,12 @@
 class Patients
 {
 private:
-	std::string birthday;
+	std::string residentNumber;
 	std::string name;
 	std::string phone;
 	std::string address;
 public:
-	Patients(std::string birthday, std::string name, 
+	Patients(std::string residentNumber, std::string name, 
 		std::string phone, std::string address);
 	std::string getName();
 	std::string getPhone();

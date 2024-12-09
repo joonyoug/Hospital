@@ -3,19 +3,18 @@
 #include <vector>
 #include "AppointmentDto.h"
 #include <nlohmann/json.hpp>
-class AppointmentDB
+#include "DBconnect.h"
+class AppointmentDB :public DBconnect
 {
-private:
-	sql::Connection *con;
-	sql::Statement* stmt;
+
 public:
 	AppointmentDB();
 	~AppointmentDB();
 	std::vector<AppointmentDto>todayAppointment(std::string doctorId);
-	bool Connect();
+	
 	bool addAppointment(
-		std::string patientPhone, std::string appointDate, 
-		 std::string doctorId,std::string sympton);
+		std::string residentNUmber, std::string name, std::string date,
+		std::string employeeNumber, std::string CC);
 
 
 };

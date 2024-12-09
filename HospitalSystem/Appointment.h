@@ -2,22 +2,22 @@
 #include <string>
 #include <vector>
 class Appointment
-{
+{/*
+ appointment_id,resident_number
+	employee_number ,date,CC
+ 
+ */
 private:
-	std::string doctorid;
-	std::string patientid;
-	std::string appointDate;
-	std::string symptons;
+	
+	std::string residentNumber;
+	std::string employeeNumber;
+	std::string date;
+	std::string cc;	
 public:
-	Appointment();
-	Appointment(std::string doctorid, std::string patientid,
-		std::string appointDate,std::string symptons);
-	std::string getAppointDate();
-	std::string getPatientid();
-	std::string getDoctorid();
-	std::string getSympthons();
-	std::vector<Appointment> todayAppointment(std::string doctorid);
-
-
+	Appointment(std::string& residentNumber, std::string& employeeNumber, std::string& date,std::string& cc );
+	std::string getResidentNumber();
+	std::string getEmployeeNumber();
+	std::string getDate();
+	std::string getCC();
 };
 
