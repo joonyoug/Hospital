@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -196,6 +196,7 @@
     <ClInclude Include="ChartRecords.h" />
     <ClInclude Include="DatabaseManager.h" />
     <ClInclude Include="DBconnect.h" />
+    <ClInclude Include="DoctorPage1.h" />
     <ClInclude Include="HosipitalOffice.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="HospitalSystem.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="ChartRecords.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="DBconnect.cpp" />
+    <ClCompile Include="DoctorPage1.cpp" />
     <ClCompile Include="HosipitalOffice.cpp" />
     <ClCompile Include="HospitalSystem.cpp" />
     <ClCompile Include="HospitalSystemDlg.cpp" />

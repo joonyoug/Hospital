@@ -7,12 +7,14 @@
 #define IDS_ABOUTBOX                    101
 #define IDD_HOSPITALSYSTEM_DIALOG       102
 #define IDD_AlreadyPatient              103
+#define IDD_DoctorPage1                 104
 #define IDR_MAINFRAME                   128
 #define IDD_DIALOG_SignUP               130
 #define IDD_DIALOG_Doctor               132
 #define IDD_DIALOG_HospitamOffice       132
 #define IDD_DIALOG_AddPatient           136
 #define IDD_DIALOG_Add_Appointment      138
+#define IDR_MENU1                       141
 #define ID_Button_login                 1000
 #define IDC_EDIT_INput_Id               1001
 #define IDC_EDIT_INput_PW               1002
@@ -60,16 +62,38 @@
 #define IDC_COMBO1                      1050
 #define IDC_BTN_alreadyPatient          1051
 #define IDC_BUTTON1                     1052
-#define IDC_EDIT1                       1053
-#define IDC_EDIT2                       1054
+#define IDC_LIST_PatientInformation     1054
+#define IDC_LIST_MedicineHistroy        1055
+#define IDC_LIST_ChartHistory           1057
+#define IDC_BUTTON5                     1058
+#define IDC_BUTTON6                     1059
+#define IDC_EDIT_Method                 1063
+#define IDC_EDIT_dosage                 1065
+#define IDC_BUTTON7                     1066
+#define IDC_EDIT_Name1                  1067
+#define IDC_EDIT_CC                     1069
+#define IDC_EDIT_DCode                  1070
+#define IDC_EDIT_Diagnoisis             1071
+#define IDC_EDIT_Menifestitation        1072
+#define IDC_BUTTON8                     1073
+#define IDC_LIST_MCode                  1074
+#define IDC_EDIT1_Mcode                 1075
+#define IDC_BUTTON_OKM                  1076
+#define IDC_BUTTON10                    1077
+#define IDC_BUTTON_OKD                  1077
+#define IDC_LIST_DCode                  1078
+#define IDC_EDIT_ResidentNumber1        1079
+#define ID_32771                        32771
+#define ID_32772                        32772
+#define ID_32773                        32773
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        141
-#define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1054
-#define _APS_NEXT_SYMED_VALUE           104
+#define _APS_NEXT_RESOURCE_VALUE        142
+#define _APS_NEXT_COMMAND_VALUE         32774
+#define _APS_NEXT_CONTROL_VALUE         1080
+#define _APS_NEXT_SYMED_VALUE           105
 #endif
 #endif

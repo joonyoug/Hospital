@@ -49,6 +49,7 @@ BEGIN_MESSAGE_MAP(HosipitalOffice, CDialogEx)
 	ON_NOTIFY(NM_CLICK, IDC_LIST1, &HosipitalOffice::OnNMClickListAppointment)
 	ON_NOTIFY(NM_CLICK, IDC_LIST3, &HosipitalOffice::OnNMClickListPatientInfo)
 	ON_BN_CLICKED(IDC_BTN_alreadyPatient, &HosipitalOffice::OnBnClickedBtnalreadypatient)
+	ON_WM_ERASEBKGND()
 END_MESSAGE_MAP()
 
 // HosipitalOffice 메시지 처리기
@@ -206,4 +207,16 @@ void HosipitalOffice::OnBnClickedBtnalreadypatient()
 	ap.setParent(this);
 	ap.DoModal();
 
+}
+
+
+BOOL HosipitalOffice::OnEraseBkgnd(CDC* pDC)
+{
+	CRect rect;
+	GetClientRect(rect);
+
+	pDC->FillSolidRect(rect, RGB(255, 255, 255));	// 변경하고 싶은 색상 RGB색
+	return TRUE;
+
+	return CDialogEx::OnEraseBkgnd(pDC);
 }

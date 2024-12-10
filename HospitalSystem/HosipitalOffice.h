@@ -40,4 +40,5 @@ public:
 	void drawWait();
 	void UpdateWait(CString name);
 	afx_msg void OnBnClickedBtnalreadypatient();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 };
