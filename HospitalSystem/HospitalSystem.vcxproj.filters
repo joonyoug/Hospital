@@ -105,6 +105,57 @@
     <ClInclude Include="AlreadyPatient.h">
       <Filter>소스 파일\View</Filter>
     </ClInclude>
+    <ClInclude Include="DoctorPage1.h">
+      <Filter>소스 파일\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Dcode.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="DcodeDB.h">
+      <Filter>소스 파일\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="DcodeController.h">
+      <Filter>소스 파일\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Mcode.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="McodeDB.h">
+      <Filter>소스 파일\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="McodeController.h">
+      <Filter>소스 파일\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartHistoryDB.h">
+      <Filter>소스 파일\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatHistoryDto.h">
+      <Filter>소스 파일\Dto</Filter>
+    </ClInclude>
+    <ClInclude Include="Vaccinnations.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="VaccinnationsDto.h">
+      <Filter>소스 파일\Dto</Filter>
+    </ClInclude>
+    <ClInclude Include="VaccinnationsDB.h">
+      <Filter>소스 파일\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartHistoryController.h">
+      <Filter>소스 파일\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Prescriptions.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="PrescriptionsDB.h">
+      <Filter>소스 파일\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="PrescriptionsController.h">
+      <Filter>소스 파일\Controller</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HospitalSystem.cpp">
@@ -172,6 +223,57 @@
     </ClCompile>
     <ClCompile Include="AlreadyPatient.cpp">
       <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="DoctorPage1.cpp">
+      <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Dcode.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="DcodeController.cpp">
+      <Filter>소스 파일\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Mcode.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="McodeController.cpp">
+      <Filter>소스 파일\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="McodeDB.cpp">
+      <Filter>소스 파일\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartHistoryDB.cpp">
+      <Filter>소스 파일\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="DcodeDB.cpp">
+      <Filter>소스 파일\Dto</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatHistoryDto.cpp">
+      <Filter>소스 파일\Dto</Filter>
+    </ClCompile>
+    <ClCompile Include="Vaccinnations.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="VaccinnationsDB.cpp">
+      <Filter>소스 파일\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="VaccinnationsDto.cpp">
+      <Filter>소스 파일\Dto</Filter>
+    </ClCompile>
+    <ClCompile Include="Decision.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartHistoryController.cpp">
+      <Filter>소스 파일\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Prescriptions.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="PrescriptionsDB.cpp">
+      <Filter>소스 파일\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="PrescriptionsController.cpp">
+      <Filter>소스 파일\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

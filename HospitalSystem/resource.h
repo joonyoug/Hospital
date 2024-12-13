@@ -78,11 +78,22 @@
 #define IDC_BUTTON8                     1073
 #define IDC_LIST_MCode                  1074
 #define IDC_EDIT1_Mcode                 1075
+#define IDC_EDIT_Mcode                  1075
 #define IDC_BUTTON_OKM                  1076
 #define IDC_BUTTON10                    1077
 #define IDC_BUTTON_OKD                  1077
 #define IDC_LIST_DCode                  1078
 #define IDC_EDIT_ResidentNumber1        1079
+#define IDC_LIST_appointment            1080
+#define IDC_EDIT1                       1081
+#define IDC_EDIT_daily_dosage           1081
+#define IDC_EDIT2                       1082
+#define IDC_EDIT_frequency              1082
+#define IDC_EDIT3                       1083
+#define IDC_EDIT_duration               1083
+#define IDC_EDIT4                       1084
+#define IDC_EDIT_note                   1084
+#define IDC_MONTHCALENDAR_doctorPage    1085
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -93,7 +104,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        142
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1080
+#define _APS_NEXT_CONTROL_VALUE         1086
 #define _APS_NEXT_SYMED_VALUE           105
 #endif
 #endif

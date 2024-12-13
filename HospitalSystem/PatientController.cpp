@@ -39,10 +39,6 @@ PatientDto PatientController::selectPatient(std::string residentNumber) {
     dto.residentNumber = patient.getResidentNumber();
     return dto;
 
-
-
-
-
 }
 
 bool PatientController::addPatient(const std::string& residentNumber, const std::string& name, const std::string& phone,

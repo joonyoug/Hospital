@@ -68,6 +68,62 @@ std::vector<AppointmentDto> AppointmentDB::todayAppointment(std::string doctorId
     }
 }
 
+std::vector<AppointmentDto> AppointmentDB::DayAppointment(std::string doctorId, std::string day) {
+    sql::PreparedStatement* pstmt = nullptr;
+    std::vector<AppointmentDto> appointments;
+    try {
+        // 쿼리 수정: 'phone_number'를 SELECT에 포함
+        std::string query =
+            "SELECT a.resident_number, a.date, a.cc, p.name, p.phone_number "
+            "FROM appointments a "
+            "JOIN patients p ON a.resident_number = p.resident_number "
+            "WHERE a.employee_number = ? AND DATE(a.date) = ?;";
+
+        pstmt = conn->prepareStatement(query);
+        pstmt->setString(1, doctorId);
+        pstmt->setString(2, day);
+
+        sql::ResultSet* res = pstmt->executeQuery();
+
+        while (res->next()) {
+            // AppointmentDto 객체 생성
+            AppointmentDto app(
+                doctorId,                          // 의사 아이디
+                res->getString("date"),             // 예약 날짜
+                res->getString("cc"),               // 증상
+                res->getString("phone_number")      // 환자 전화번호
+            );
+            app.patientName = res->getString("name");  // 환자 이름 설정
+            appointments.push_back(app);  // 벡터에 추가
+        }
+
+        // ResultSet 메모리 해제
+        delete res;
+
+        return appointments;
+    }
+    catch (sql::SQLException& e) {
+        std::cout << "SQL 오류: " << e.what() << std::endl;
+
+        // 예외 발생 시 PreparedStatement 객체 삭제
+        if (pstmt) {
+            delete pstmt;
+        }
+
+        return appointments;  // 빈 벡터를 반환
+    }
+    catch (std::exception& e) {
+        std::cout << "일반 오류: " << e.what() << std::endl;
+
+        // 예외 발생 시 PreparedStatement 객체 삭제
+        if (pstmt) {
+            delete pstmt;
+        }
+
+        return appointments;  // 빈 벡터를 반환
+    }
+
+}
 
 
 bool AppointmentDB::addAppointment(

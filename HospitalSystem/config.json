@@ -1,8 +1,8 @@
 {
 	"database": {
-		"host": "tcp://database-1.ct8gi4ac6qk6.ap-southeast-2.rds.amazonaws.com:3306",
-		"username": "admin",
-		"password": "qkralsdn!!",
+		"host": "34.64.187.178",
+		"username": "root",
+		"password": "Dhalstjs!",
 		"schema": "EMR",
 		"charset": "euckr"
 	}
