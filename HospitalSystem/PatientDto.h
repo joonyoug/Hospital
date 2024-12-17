@@ -8,7 +8,7 @@ public:
 	std::string phone;
 	std::string gender;
 	std::string address;
-	int emergencyNumber;
+	std::string emergencyNumber;
 	std::string dosingList;
 	std::string bloodType;
 	PatientDto::PatientDto() {}

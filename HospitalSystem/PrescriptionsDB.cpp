@@ -1,7 +1,5 @@
 #include "pch.h"
 #include "PrescriptionsDB.h"
-
-
 bool PrescriptionsDB::addPrescriptions(std::string residentNumber, std::string employee_number
 	, std::string date, std::string method, std::string dosage, float daily_dosage,
 	int frequency, int duration, std::string notes) {

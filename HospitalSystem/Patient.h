@@ -9,13 +9,13 @@ private:
 	std::string phone;
 	std::string gender;
 	std::string address;
-	int emergencyNumber;
+	std::string emergencyNumber;
 	std::string dosingList;
 	std::string bloodType;
 public:
 	Patient::Patient();
 	Patient::Patient(const std::string& residentNumber, const std::string& name, const std::string& phone,
-		const std::string& gender, const std::string& address, int emergencyNumber, const std::string& dosingList,
+		const std::string& gender, const std::string& address, const std::string& emergencyNumber, const std::string& dosingList,
 		const std::string& bloodType);
 	std::string getName();
 	std::string getPhone();
@@ -24,7 +24,7 @@ public:
 	std::string getDosingList();
 	std::string getBloodType();
 	std::string getGender();
-	int getEmergencyNumber();
+	std::string getEmergencyNumber();
 
 };
 

@@ -32,17 +32,18 @@ PatientDto PatientController::selectPatient(std::string residentNumber) {
 
     dto.address = patient.getAddress();
     dto.bloodType = patient.getBloodType();
-    dto.dosingList = patient.getBloodType();
+    dto.dosingList = patient.getDosingList();
     dto.gender = patient.getGender();
     dto.name = patient.getName();
     dto.phone = patient.getPhone();
     dto.residentNumber = patient.getResidentNumber();
+    dto.emergencyNumber = patient.getEmergencyNumber();
     return dto;
 
 }
 
 bool PatientController::addPatient(const std::string& residentNumber, const std::string& name, const std::string& phone,
-    const std::string& gender, const std::string& address, int emergencyNumber, const std::string& dosingList,
+    const std::string& gender, const std::string& address, std::string &emergencyNumber, const std::string& dosingList,
     const std::string& bloodType) {
 
   

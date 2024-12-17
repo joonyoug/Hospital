@@ -87,7 +87,7 @@ void Addpatients::OnBnClickedButtonAdd()
         std::string(CT2A(phone)),
         std::string(CT2A(gender)),
         std::string(CT2A(addr)),
-        emerNum,  // 정수형 emergencyNumber 사용
+        std::string(CT2A(emergencyNumber)),  // 정수형 emergencyNumber 사용
         std::string(CT2A(dosing_list)),
         std::string(CT2A(blood_type))
     )) {

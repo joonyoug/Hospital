@@ -203,6 +203,7 @@
     <ClInclude Include="DcodeController.h" />
     <ClInclude Include="DcodeDB.h" />
     <ClInclude Include="Decision.h" />
+    <ClInclude Include="DetailPage.h" />
     <ClInclude Include="DoctorPage1.h" />
     <ClInclude Include="HosipitalOffice.h" />
     <ClInclude Include="framework.h" />
@@ -222,6 +223,7 @@
     <ClInclude Include="PrescriptionsController.h" />
     <ClInclude Include="PrescriptionsDB.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SearchPage.h" />
     <ClInclude Include="SignUP.h" />
     <ClInclude Include="SignUpController.h" />
     <ClInclude Include="targetver.h" />
@@ -247,6 +249,7 @@
     <ClCompile Include="DcodeController.cpp" />
     <ClCompile Include="DcodeDB.cpp" />
     <ClCompile Include="Decision.cpp" />
+    <ClCompile Include="DetailPage.cpp" />
     <ClCompile Include="DoctorPage1.cpp" />
     <ClCompile Include="HosipitalOffice.cpp" />
     <ClCompile Include="HospitalSystem.cpp" />
@@ -269,6 +272,7 @@
     <ClCompile Include="Prescriptions.cpp" />
     <ClCompile Include="PrescriptionsController.cpp" />
     <ClCompile Include="PrescriptionsDB.cpp" />
+    <ClCompile Include="SearchPage.cpp" />
     <ClCompile Include="SignUP.cpp" />
     <ClCompile Include="SignUpController.cpp" />
     <ClCompile Include="Vaccinnations.cpp" />

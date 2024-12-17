@@ -156,6 +156,12 @@
     <ClInclude Include="PrescriptionsController.h">
       <Filter>소스 파일\Controller</Filter>
     </ClInclude>
+    <ClInclude Include="DetailPage.h">
+      <Filter>소스 파일\View</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchPage.h">
+      <Filter>소스 파일\View</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HospitalSystem.cpp">
@@ -274,6 +280,12 @@
     </ClCompile>
     <ClCompile Include="PrescriptionsController.cpp">
       <Filter>소스 파일\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="DetailPage.cpp">
+      <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchPage.cpp">
+      <Filter>소스 파일\View</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,7 @@
 #include "Addpatients.h"
 #include "AlreadyPatient.h"
 #include "DoctorPage1.h"
+#include "DetailPage.h"
 #include <vector>
 
 // HosipitalOffice 대화 상자
@@ -28,7 +29,7 @@ CString HosipitalOffice::getDoctorId() {
 BOOL HosipitalOffice::OnInitDialog()
 {	
 	CDialogEx::OnInitDialog();  // 기본 초기화
-	
+	SetDlgItemText(IDC_STATIC_ID, doctorId);
 	drawPatient();
 	drawAppointment();
 	drawWait();
@@ -55,6 +56,8 @@ BEGIN_MESSAGE_MAP(HosipitalOffice, CDialogEx)
 	ON_WM_ERASEBKGND()
 	ON_COMMAND(ID_32771, &HosipitalOffice::OnMenuDoctor)
 	ON_NOTIFY(MCN_SELECT, IDC_MONTHCALENDAR1, &HosipitalOffice::OnMcnSelectMonthcalendar1)
+	ON_WM_DESTROY()
+	ON_BN_CLICKED(IDC_BUTTON_SearchPatient, &HosipitalOffice::OnBnClickedButtonSearchpatient)
 END_MESSAGE_MAP()
 
 // HosipitalOffice 메시지 처리기
@@ -65,11 +68,6 @@ void HosipitalOffice::OnBnClickedButtonaddappointment()
 	ap.DoModal();
 
 }
-
-
-
-
-
 void HosipitalOffice::drawPatient() {
 	m_patientInfoList.ModifyStyle(0, LVS_REPORT); // 리포트 뷰 스타일 설정
 	m_patientInfoList.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
@@ -90,13 +88,8 @@ void HosipitalOffice::drawWait() {
 
 	m_list_wait.ModifyStyle(0, LVS_REPORT); // 리포트 뷰 스타일 설정
 	m_list_wait.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
-
 	m_list_wait.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
 }
-
-
-
-
 void HosipitalOffice::drawAppointment() {
 	m_list.DeleteAllItems();
 	m_list.ModifyStyle(0, LVS_REPORT);
@@ -175,6 +168,7 @@ void HosipitalOffice::UpdatePatientInfo(std::string name)
 
 	PatientController pt;
 	PatientDto dto = pt.searchPatient(name);
+	m_resident = dto.residentNumber.c_str();
 	
 	// 첫 번째 항목이 없다면 새 항목을 추가하고, 있다면 기존 항목을 갱신
 	if (m_patientInfoList.GetItemCount() > 0) {
@@ -198,13 +192,17 @@ void HosipitalOffice::OnNMClickListPatientInfo(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
 
-	int selected = pNMItemActivate->iItem;
+	
+	detailPatient();
 
-	AfxMessageBox(_T("asd"));
-	CString name;
+	
 	
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	*pResult = 0;
+
+
+
+	
 }
 
 
@@ -276,7 +274,15 @@ void HosipitalOffice::drawDayAppointment(std::vector<AppointmentDto> dto) {
 
 	}
 
+void HosipitalOffice::detailPatient() {
 
+	//AfxMessageBox(_T("dddd"));
+	m_detail = new DetailPage();
+	m_detail->setResident(m_resident);
+	m_detail->Create(IDD_DetailPage);
+	m_detail->ShowWindow(SW_SHOW);
+
+}
 
 void HosipitalOffice::OnMcnSelectMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult)
 {
@@ -311,5 +317,22 @@ CString HosipitalOffice::getTime() {
 	// 날짜가 선택되지 않았을 경우 빈 문자열 반환
 	return _T("");
 
+
+}
+
+
+void HosipitalOffice::OnDestroy()
+{
+	CDialogEx::OnDestroy();
+	delete m_detail;
+	delete this->m_search;
+}
+
+
+void HosipitalOffice::OnBnClickedButtonSearchpatient()
+{
+	m_search = new SearchPage();
+	m_search->Create(IDD_SearchPage);
+	m_search->ShowWindow(SW_SHOW);
 
 }

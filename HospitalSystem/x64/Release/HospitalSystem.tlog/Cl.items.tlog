@@ -15,6 +15,7 @@ C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Dcode.cpp;C:\Users\epg
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DcodeController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DcodeController.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DcodeDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DcodeDB.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Decision.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Decision.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DetailPage.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DetailPage.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DoctorPage1.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DoctorPage1.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HosipitalOffice.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\HosipitalOffice.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HospitalSystem.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\HospitalSystem.obj
@@ -32,6 +33,7 @@ C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\pch.cpp;C:\Users\epgis
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Prescriptions.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Prescriptions.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\PrescriptionsController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\PrescriptionsController.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\PrescriptionsDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\PrescriptionsDB.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\SearchPage.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\SearchPage.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\SignUP.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\SignUP.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\SignUpController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\SignUpController.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Vaccinnations.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Vaccinnations.obj

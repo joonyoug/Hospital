@@ -68,6 +68,7 @@ BOOL DoctorPage1::OnInitDialog()
 	drawMcode();
 	DrawAppointment();
 	DrawPatient();
+	drawInitialChart();
 	return TRUE;
 }
 
@@ -330,22 +331,27 @@ void DoctorPage1::OnNMClickListappointment(NMHDR* pNMHDR, LRESULT* pResult)
 	}
 	*pResult = 0;
 }
-
-void DoctorPage1::drawChartHistory() {
-	m_ChartHistroy.DeleteAllItems();
+void DoctorPage1::drawInitialChart() {
 	m_ChartHistroy.InsertColumn(0, _T("주민번호"), LVCFMT_CENTER, 100);
 	m_ChartHistroy.InsertColumn(1, _T("내원일"), LVCFMT_CENTER, 100);
 	m_ChartHistroy.InsertColumn(2, _T("증상"), LVCFMT_CENTER, 100);
 	m_ChartHistroy.InsertColumn(3, _T("진단"), LVCFMT_CENTER, 100);
-
-	ChartHistoryDB db;
-	vector<ChatHistoryDto> dto = db.selectedChart(m_residentNumber);
-
 	CRect rect;
 	m_ChartHistroy.GetClientRect(&rect);
 	int width = rect.Width();
 	int otherColumnsWidth = 100 * 3;
 	m_ChartHistroy.SetColumnWidth(3, width - otherColumnsWidth);
+
+}
+
+void DoctorPage1::drawChartHistory() {
+
+	m_ChartHistroy.DeleteAllItems();
+	
+
+	ChartHistoryDB db;
+	vector<ChatHistoryDto> dto = db.selectedChart(m_residentNumber);
+
 
 
 	for (int i = 0;i < dto.size();i++) {
@@ -425,10 +431,7 @@ void DoctorPage1::drawDayAppointment(std::vector<AppointmentDto> dto) {
 		m_listAppointment.InsertItem(i, CString(dto[i].patientName.c_str()));
 		m_listAppointment.SetItemText(i, 1, CString(dto[i].symptons.c_str()));
 		
-
 	}
-
-	
 }
 vector<string> DoctorPage1::split(string dcode, string Delimiter) {
 

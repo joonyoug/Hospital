@@ -51,6 +51,7 @@ public:
 	CListCtrl m_listAppointment;
 	afx_msg void OnNMClickListappointment(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnNMClickListPatientinformation(NMHDR* pNMHDR, LRESULT* pResult);
+	void drawInitialChart();
 	CListCtrl m_listVaccin;
 	CMonthCalCtrl m_doctorPageCal;
 	CString getTime();

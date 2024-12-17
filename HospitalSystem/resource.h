@@ -8,6 +8,8 @@
 #define IDD_HOSPITALSYSTEM_DIALOG       102
 #define IDD_AlreadyPatient              103
 #define IDD_DoctorPage1                 104
+#define IDD_DetailPage                  105
+#define IDD_SearchPage                  106
 #define IDR_MAINFRAME                   128
 #define IDD_DIALOG_SignUP               130
 #define IDD_DIALOG_Doctor               132
@@ -87,13 +89,32 @@
 #define IDC_LIST_appointment            1080
 #define IDC_EDIT1                       1081
 #define IDC_EDIT_daily_dosage           1081
+#define IDC_EDIT_detaiName              1081
+#define IDC_EDIT_srn                    1081
 #define IDC_EDIT2                       1082
 #define IDC_EDIT_frequency              1082
+#define IDC_EDIT_detailResidentNumber   1082
 #define IDC_EDIT3                       1083
 #define IDC_EDIT_duration               1083
+#define IDC_EDIT_detailGender           1083
 #define IDC_EDIT4                       1084
 #define IDC_EDIT_note                   1084
+#define IDC_EDIT_detailAddr             1084
 #define IDC_MONTHCALENDAR_doctorPage    1085
+#define IDC_EDIT_detailPhone            1086
+#define IDC_EDIT_SearchName             1086
+#define IDC_EDIT_detailEmer             1087
+#define IDC_EDIT_searchPhone            1087
+#define IDC_EDIT_detailDosing           1088
+#define IDC_EDIT_searchlEmer            1088
+#define IDC_EDIT_detailBloody           1089
+#define IDC_EDIT_searchDosing           1089
+#define IDC_BUTTON_SearchPatient        1090
+#define IDC_EDIT_searchBloody           1090
+#define IDC_BUTTON_Search               1091
+#define IDC_EDIT_searchlResidentNumber  1092
+#define IDC_EDIT_searchGender           1093
+#define IDC_EDIT_searchAddr             1094
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -102,9 +123,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        142
+#define _APS_NEXT_RESOURCE_VALUE        144
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1086
-#define _APS_NEXT_SYMED_VALUE           105
+#define _APS_NEXT_CONTROL_VALUE         1095
+#define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif
