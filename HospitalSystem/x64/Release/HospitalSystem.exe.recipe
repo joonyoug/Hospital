@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
+      <FullPath>C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\x64\Release\HospitalSystem.exe</FullPath>
+=======
       <FullPath>C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.exe</FullPath>
+>>>>>>> upstream/dev
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

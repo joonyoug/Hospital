@@ -3,19 +3,16 @@
 #include "Doctor.h";
 #include <nlohmann/json.hpp> 
 #include <fstream> 
+#include "DBconnect.h"
 
-
-class DatabaseManager
+class DatabaseManager :public DBconnect
 {
-private:
-	sql::Connection* conn;
-	sql::Statement* stmt;
+
 public:
 	DatabaseManager();
 	~DatabaseManager();
-	
-	bool Connect();
-	bool ExecuteInsertQuery(const Doctor& member); //회원가입
+
+	bool ExecuteInsertQuery(Doctor& member); //회원가입
 	bool ExcuteLoginQuery(const std::string id,   //로그인
 		const std::string pw);
 	bool CheckIdQuery(const std::string id);

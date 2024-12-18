@@ -1,39 +1,44 @@
 #include "pch.h"
 #include "Doctor.h"
-/*
 
-public:
-Doctor();
-Doctor(const std::string id, const std::string pw, const std::string name);
-std::string getId();
-std::string getName();
-std::string getPassword();
-};
+// 생성자 정의 (참조 매개변수 사용)
+Doctor::Doctor(std::string& employeeNumber, std::string& password, std::string& name,
+    std::string& licenseId, std::string& department, std::string& departmentCode,
+    std::string& speicalty, std::string& phoneNumber)
+    : employeeNumber(employeeNumber), password(password), name(name),
+    licenseId(licenseId), department(department), departmentCode(departmentCode),
+    speicalty(speicalty), phoneNumber(phoneNumber) {
+}
 
-*/
+// 멤버 함수 정의
+std::string Doctor::getEmployeeNumber() {
+    return employeeNumber;
+}
 
-Doctor::Doctor() {}
-Doctor::Doctor(const std::string id, const std::string pw,
-	const std::string name,
-	const std::string phoneNumber,std::string employeeNumber) {
-	this->id = id;
-	this->password = pw;
-	this->name = name;
-	this->phoneNumber = phoneNumber;
-	this->employeeNumber = employeeNumber;
+std::string Doctor::getPassword() {
+    return password;
 }
-std::string Doctor::getName() const{
-	return this->name;
+
+std::string Doctor::getName() {
+    return name;
 }
-std::string Doctor::getId() const{
-	return this->id;
+
+std::string Doctor::getlicenseId() {
+    return licenseId;
 }
-std::string Doctor::getPassword() const{
-	return this->password;
+
+std::string Doctor::getDepatment() {
+    return department;
 }
-std::string Doctor::getPhoneNumber() const {
-	return this->phoneNumber;
+
+std::string Doctor::getDepartmentCode() {
+    return departmentCode;
 }
-std::string Doctor::getEmployeeNumber() const {
-	return this->employeeNumber;
+
+std::string Doctor::getSpeicalty() {
+    return speicalty;
+}
+
+std::string Doctor::getPhoneNumber() {
+    return phoneNumber;
 }

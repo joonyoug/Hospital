@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -85,6 +85,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+<<<<<<< HEAD
+    <IncludePath>C:\Program Files\MySQL\MySQL Server 8.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\MySQL\MySQL Server 8.0\lib;$(LibraryPath)</LibraryPath>
+=======
+>>>>>>> upstream/dev
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -165,13 +170,21 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>STATIC_CONCPP;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+<<<<<<< HEAD
+      <AdditionalIncludeDirectories>C:\Users\jeong\OneDrive\문서\libraries\mysql8.0.32-64\include</AdditionalIncludeDirectories>
+=======
       <AdditionalIncludeDirectories>C:\Users\epgis\Desktop\mysql8.0.32-64\include</AdditionalIncludeDirectories>
+>>>>>>> upstream/dev
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+<<<<<<< HEAD
+      <AdditionalLibraryDirectories>C:\Users\jeong\OneDrive\문서\libraries\mysql8.0.32-64\lib64\vs14</AdditionalLibraryDirectories>
+=======
       <AdditionalLibraryDirectories>C:\Users\epgis\Desktop\mysql8.0.32-64\lib64\vs14</AdditionalLibraryDirectories>
+>>>>>>> upstream/dev
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
@@ -187,47 +200,127 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AddAppointment.h" />
+    <ClInclude Include="Addpatients.h" />
+    <ClInclude Include="AlreadyPatient.h" />
     <ClInclude Include="Appointment.h" />
     <ClInclude Include="AppointmentController.h" />
     <ClInclude Include="AppointmentDB.h" />
     <ClInclude Include="AppointmentDto.h" />
+<<<<<<< HEAD
+    <ClInclude Include="CBillingDialog.h" />
+=======
+>>>>>>> upstream/dev
+    <ClInclude Include="ChartHistoryController.h" />
+    <ClInclude Include="ChartHistoryDB.h" />
+    <ClInclude Include="ChartRecords.h" />
+    <ClInclude Include="ChatHistoryDto.h" />
     <ClInclude Include="DatabaseManager.h" />
-    <ClInclude Include="DoctorPage.h" />
+    <ClInclude Include="DBconnect.h" />
+    <ClInclude Include="Dcode.h" />
+    <ClInclude Include="DcodeController.h" />
+    <ClInclude Include="DcodeDB.h" />
+    <ClInclude Include="Decision.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="DetailPage.h" />
+>>>>>>> upstream/dev
+    <ClInclude Include="DoctorPage1.h" />
+    <ClInclude Include="HosipitalOffice.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="HospitalSystem.h" />
     <ClInclude Include="HospitalSystemDlg.h" />
     <ClInclude Include="LoginController.h" />
     <ClInclude Include="Doctor.h" />
-    <ClInclude Include="MedicalHistory.h" />
-    <ClInclude Include="Patients.h" />
+    <ClInclude Include="Mcode.h" />
+    <ClInclude Include="McodeController.h" />
+    <ClInclude Include="McodeDB.h" />
+    <ClInclude Include="Patient.h" />
+    <ClInclude Include="PatientController.h" />
+    <ClInclude Include="PatientDb.h" />
+    <ClInclude Include="PatientDto.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Prescriptions.h" />
+    <ClInclude Include="PrescriptionsController.h" />
+    <ClInclude Include="PrescriptionsDB.h" />
     <ClInclude Include="Resource.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="SearchPage.h" />
+>>>>>>> upstream/dev
     <ClInclude Include="SignUP.h" />
     <ClInclude Include="SignUpController.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Vaccinnations.h" />
+    <ClInclude Include="VaccinnationsDB.h" />
+    <ClInclude Include="VaccinnationsDto.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="WaitPatient.h" />
+    <ClInclude Include="WaitPatientDB.h" />
+>>>>>>> upstream/dev
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAppointment.cpp" />
+    <ClCompile Include="Addpatients.cpp" />
+    <ClCompile Include="AlreadyPatient.cpp" />
     <ClCompile Include="Appointment.cpp" />
     <ClCompile Include="AppointmentController.cpp" />
     <ClCompile Include="AppointmentDB.cpp" />
     <ClCompile Include="AppointmentDto.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="CBillingDialog.cpp" />
+=======
+>>>>>>> upstream/dev
+    <ClCompile Include="ChartHistoryController.cpp" />
+    <ClCompile Include="ChartHistoryDB.cpp" />
+    <ClCompile Include="ChartRecords.cpp" />
+    <ClCompile Include="ChatHistoryDto.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
-    <ClCompile Include="DoctorPage.cpp" />
+    <ClCompile Include="DBconnect.cpp" />
+    <ClCompile Include="Dcode.cpp" />
+    <ClCompile Include="DcodeController.cpp" />
+    <ClCompile Include="DcodeDB.cpp" />
+    <ClCompile Include="Decision.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="DetailPage.cpp" />
+>>>>>>> upstream/dev
+    <ClCompile Include="DoctorPage1.cpp" />
+    <ClCompile Include="HosipitalOffice.cpp" />
     <ClCompile Include="HospitalSystem.cpp" />
     <ClCompile Include="HospitalSystemDlg.cpp" />
     <ClCompile Include="LoginController.cpp" />
     <ClCompile Include="Doctor.cpp" />
-    <ClCompile Include="MedicalHistory.cpp" />
-    <ClCompile Include="Patients.cpp" />
+    <ClCompile Include="Mcode.cpp" />
+    <ClCompile Include="McodeController.cpp" />
+    <ClCompile Include="McodeDB.cpp" />
+    <ClCompile Include="Patient.cpp" />
+    <ClCompile Include="PatientController.cpp" />
+    <ClCompile Include="PatientDb.cpp" />
+    <ClCompile Include="PatientDto.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Prescriptions.cpp" />
+    <ClCompile Include="PrescriptionsController.cpp" />
+    <ClCompile Include="PrescriptionsDB.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="SearchPage.cpp" />
+>>>>>>> upstream/dev
     <ClCompile Include="SignUP.cpp" />
     <ClCompile Include="SignUpController.cpp" />
+    <ClCompile Include="Vaccinnations.cpp" />
+    <ClCompile Include="VaccinnationsDB.cpp" />
+    <ClCompile Include="VaccinnationsDto.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="WaitPatient.cpp" />
+    <ClCompile Include="WaitPatientDB.cpp" />
+>>>>>>> upstream/dev
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HospitalSystem.rc" />

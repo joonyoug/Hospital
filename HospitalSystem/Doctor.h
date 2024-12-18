@@ -4,19 +4,30 @@
 class Doctor
 {
 private:
-	std::string id;
-	std::string name;
-	std::string password;
-	std::string phoneNumber;
 	std::string employeeNumber;
+	std::string password;
+	std::string name;
+	std::string licenseId;
+	std::string department;
+	std::string departmentCode;
+	std::string speicalty;
+	std::string role;
+	std::string phoneNumber;
 public:
-	Doctor();
-	Doctor(const std::string id, const std::string pw,
-		const std::string name, std::string phoneNumber, std::string employeeNumber);
-	std::string getId() const;
-	std::string getName() const;
-	std::string getPassword() const;
-	std::string getEmployeeNumber() const;
-	std::string getPhoneNumber() const;
+	Doctor(std::string &employeeNumber, std::string& password, std::string &name,
+		std::string& licenseId, std::string &department, std::string& departmentCode,
+		std::string &speicalty,
+		std::string& phoneNumber
+	);
+	std::string getEmployeeNumber();
+	std::string getPassword();
+	std::string getName();
+	std::string getlicenseId();
+	std::string getDepatment();
+	std::string getDepartmentCode();
+	std::string getSpeicalty();
+	std::string getPhoneNumber();
+
+	
 };
 

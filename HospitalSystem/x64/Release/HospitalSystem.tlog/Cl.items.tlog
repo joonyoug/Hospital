@@ -1,16 +1,86 @@
+<<<<<<< HEAD
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\AddAppointment.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\AddAppointment.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Addpatients.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Addpatients.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\AlreadyPatient.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\AlreadyPatient.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Appointment.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Appointment.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\AppointmentController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\AppointmentController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\AppointmentDB.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\AppointmentDB.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\AppointmentDto.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\AppointmentDto.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\CBillingDialog.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\CBillingDialog.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\ChartHistoryController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\ChartHistoryController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\ChartHistoryDB.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\ChartHistoryDB.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\ChartRecords.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\ChartRecords.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\ChatHistoryDto.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\ChatHistoryDto.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\DatabaseManager.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\DatabaseManager.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\DBconnect.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\DBconnect.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Dcode.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Dcode.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\DcodeController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\DcodeController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\DcodeDB.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\DcodeDB.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Decision.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Decision.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\DoctorPage1.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\DoctorPage1.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\HosipitalOffice.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\HosipitalOffice.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\HospitalSystem.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\HospitalSystem.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\HospitalSystemDlg.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\HospitalSystemDlg.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\LoginController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\LoginController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Doctor.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Doctor.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Mcode.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Mcode.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\McodeController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\McodeController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\McodeDB.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\McodeDB.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Patient.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Patient.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\PatientController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\PatientController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\PatientDb.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\PatientDb.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\PatientDto.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\PatientDto.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\pch.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\pch.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Prescriptions.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Prescriptions.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\PrescriptionsController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\PrescriptionsController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\PrescriptionsDB.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\PrescriptionsDB.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\SignUP.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\SignUP.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\SignUpController.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\SignUpController.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Vaccinnations.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\Vaccinnations.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\VaccinnationsDB.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\VaccinnationsDB.obj
+C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\VaccinnationsDto.cpp;C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\x64\Release\VaccinnationsDto.obj
+=======
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\AddAppointment.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\AddAppointment.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Addpatients.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Addpatients.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\AlreadyPatient.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\AlreadyPatient.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Appointment.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Appointment.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\AppointmentController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\AppointmentController.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\AppointmentDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\AppointmentDB.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\AppointmentDto.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\AppointmentDto.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\ChartHistoryController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\ChartHistoryController.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\ChartHistoryDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\ChartHistoryDB.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\ChartRecords.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\ChartRecords.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\ChatHistoryDto.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\ChatHistoryDto.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DatabaseManager.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DatabaseManager.obj
-C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DoctorPage.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DoctorPage.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DBconnect.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DBconnect.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Dcode.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Dcode.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DcodeController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DcodeController.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DcodeDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DcodeDB.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Decision.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Decision.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DetailPage.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DetailPage.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DoctorPage1.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\DoctorPage1.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HosipitalOffice.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\HosipitalOffice.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HospitalSystem.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\HospitalSystem.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HospitalSystemDlg.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\HospitalSystemDlg.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\LoginController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\LoginController.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Doctor.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Doctor.obj
-C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\MedicalHistory.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\MedicalHistory.obj
-C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Patients.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Patients.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Mcode.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Mcode.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\McodeController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\McodeController.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\McodeDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\McodeDB.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Patient.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Patient.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\PatientController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\PatientController.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\PatientDb.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\PatientDb.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\PatientDto.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\PatientDto.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\pch.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\pch.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Prescriptions.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Prescriptions.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\PrescriptionsController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\PrescriptionsController.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\PrescriptionsDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\PrescriptionsDB.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\SearchPage.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\SearchPage.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\SignUP.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\SignUP.obj
 C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\SignUpController.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\SignUpController.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\Vaccinnations.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\Vaccinnations.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\VaccinnationsDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\VaccinnationsDB.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\VaccinnationsDto.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\VaccinnationsDto.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\WaitPatient.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\WaitPatient.obj
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\WaitPatientDB.cpp;C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\x64\Release\WaitPatientDB.obj
+>>>>>>> upstream/dev

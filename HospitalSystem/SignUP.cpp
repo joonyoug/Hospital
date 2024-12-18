@@ -40,31 +40,59 @@ END_MESSAGE_MAP()
 
 void SignUP::OnBnClickedOk()
 {
-	CString id,pw,name,phoneNumber,employeeNumber;
+	CString pw,name,phoneNumber,employeeNumber,licenseId, department, departmentCode, speicalty;
 
 	SignUpController sign;
-
-	GetDlgItemText(IDC_EDIT_SIgnUp_ID, id);
+	/*
+	
+	std::string &employeeNumber, std::string& password, std::string &name,
+	std::string& licenseId, std::string &department, std::string& departmentCode,
+	std::string &speicalty, std::string& employeeDate, std::string &role, std::string &status,
+	std::string& phoneNumber
+	
+	*/
 	GetDlgItemText(IDC_EDIT_SignUp_pw, pw);
 	GetDlgItemText(IDC_EDIT_SignUp_Name, name);
 	GetDlgItemText(IDC_EDIT_SignUp_Employee, employeeNumber);
 	GetDlgItemText(IDC_EDIT_SignUp_Phone, phoneNumber);
+	GetDlgItemText(IDC_EDIT_SignUp_license_id, licenseId);
+	GetDlgItemText(IDC_EDIT_SignUp_department, department);
+	GetDlgItemText(IDC_EDIT_SignUp_departmentCode, departmentCode);
+	GetDlgItemText(IDC_EDIT_SignUP_specialty, speicalty);
 	// 중복확인
 	if (!(this->checkId)) {
 		AfxMessageBox(_T("중복확인 하세요."));
 		return;
 	}
+	/*
+	std::string& employeeNumber, std::string& password, std::string& name,
+	std::string& licenseId, std::string& department, std::string& departmentCode,
+	std::string& speicalty,
+	std::string& phoneNumber
+	"insert into doctors (employee_number,password,name,license_id,department,department_code,specialty,phone_number) values(?,?,?,?,?,?,?,?,?)";
+	*/
 	//가입
+
+	std::string strPw = std::string(CT2A(pw));            // CString -> std::string
+	std::string strName = std::string(CT2A(name));        // CString -> std::string
+	std::string strEmployeeNumber = std::string(CT2A(employeeNumber)); // CString -> std::string
+	std::string strPhoneNumber = std::string(CT2A(phoneNumber)); // CString -> std::string
+	std::string strLicenseId = std::string(CT2A(licenseId)); // CString -> std::string
+	std::string strDepartment = std::string(CT2A(department)); // CString -> std::string
+	std::string strDepartmentCode = std::string(CT2A(departmentCode)); // CString -> std::string
+	std::string strSpecialty = std::string(CT2A(speicalty)); // CString -> std::string
+
+	// SignUP 함수 호출 (std::string 참조로 넘겨줌)
 	try {
-		if (sign.SignUP(std::string(CT2A(id)), std::string(CT2A(pw)),
-			std::string(CT2A(name)),
-			std::string(CT2A(phoneNumber)),std::string(CT2A(employeeNumber))))
-		{
-			AfxMessageBox(_T("회원가입 성공"));
-			this->EndDialog(IDOK);		
+		if (sign.SignUP(strEmployeeNumber,strPw,strName,strLicenseId,strDepartment
+			,strDepartmentCode,strSpecialty,strPhoneNumber)) {
+			// 회원가입 성공 처리
+			AfxMessageBox(_T("회원가입 성공!"));
+			this->EndDialog(IDOK);
 		}
 		else {
-			AfxMessageBox(_T("회원가입 실패"));
+			// 회원가입 실패 처리
+			AfxMessageBox(_T("회원가입 실패!"));
 		}
 	}
 	catch (const std::exception& e) {
@@ -75,7 +103,7 @@ void SignUP::OnBnClickedOk()
 void SignUP::OnBnClickedButtonCheckid()
 {
 	CString id;
-	GetDlgItemText(IDC_EDIT_SIgnUp_ID, id);
+	GetDlgItemText(IDC_EDIT_SignUp_Employee,id);
 	if (id.IsEmpty()) { 
 		AfxMessageBox(_T("값을 입력하세요"));
 		return;
