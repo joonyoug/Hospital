@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include "afxdialogex.h"
 #include "AppointmentDto.h"
-
+#include <vector>
+#include "AppointmentDto.h"
 // HosipitalOffice 대화 상자
 
 class HosipitalOffice : public CDialogEx
@@ -10,6 +11,7 @@ class HosipitalOffice : public CDialogEx
 
 public:
 	HosipitalOffice(CString doctorId, CWnd* pParent = nullptr);   // 표준 생성자입니다.
+	
 	BOOL OnInitDialog();
 	virtual ~HosipitalOffice();
 
@@ -32,6 +34,7 @@ public:
 	afx_msg void OnBnClickedButtonAddpatient();
 	void drawAppointment();
 	void drawPatient();
+	void drawDayAppointment(std::vector<AppointmentDto> dto);
 	void UpdatePatientInfo(std::string name);
 	afx_msg void OnNMClickListAppointment(NMHDR* pNMHDR, LRESULT* pResult);
 	CListCtrl m_patientInfoList;
@@ -41,4 +44,8 @@ public:
 	void UpdateWait(CString name);
 	afx_msg void OnBnClickedBtnalreadypatient();
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg void OnMenuDoctor();
+	afx_msg void OnMcnSelectMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult);
+	CString getTime();
+	CMonthCalCtrl m_officePageCal;
 };

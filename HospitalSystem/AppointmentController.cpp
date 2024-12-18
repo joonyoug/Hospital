@@ -19,3 +19,10 @@ bool AppointmentController::addAppointment(std::string residentNUmber, std::stri
 	}
 	return false;
 }
+std::vector<AppointmentDto> AppointmentController::dayAppointment(std::string doctorId, std::string date) {
+	AppointmentDB db;
+
+	if (db.Connect()) {
+		return db.DayAppointment(doctorId, date);
+	}
+}

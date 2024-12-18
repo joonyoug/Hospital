@@ -10,6 +10,8 @@
 #include "LoginController.h"
 #include "SignUP.h"
 #include "HosipitalOffice.h"
+#include "CBillingDialog.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -69,6 +71,7 @@ BEGIN_MESSAGE_MAP(CHospitalSystemDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(ID_Button_login, &CHospitalSystemDlg::OnBnClickedButtonlogin)
 	ON_BN_CLICKED(IDC_Register, &CHospitalSystemDlg::OnBnClickedRegister)
+	ON_COMMAND(ID_32772, &CHospitalSystemDlg::OnMenuBilling)
 END_MESSAGE_MAP()
 
 
@@ -183,4 +186,10 @@ void CHospitalSystemDlg::OnBnClickedRegister()
 	SignUP dlg;
 	dlg.DoModal();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+void CHospitalSystemDlg::OnMenuBilling()
+{
+	CBillingDialog billingDialog;
+	billingDialog.DoModal(); // CBillingDialog 실행
 }

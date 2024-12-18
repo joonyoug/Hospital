@@ -3,10 +3,10 @@
 
 // 생성자 정의 (참조 매개변수 사용)
 ChartRecords::ChartRecords(std::string& residentNumber, std::string& employeeNumber,
-    std::string& date, std::string& KdcCode, std::string& diagnose,
+    std::string& date,
     std::string& cc, std::string& manifestation)
     : residentNumber(residentNumber), employeeNumber(employeeNumber),
-    date(date), KdcCode(KdcCode), diagnose(diagnose), cc(cc),
+    date(date), cc(cc),
     manifestation(manifestation) {
 }
 
@@ -23,13 +23,6 @@ std::string ChartRecords::getDate() {
     return date;
 }
 
-std::string ChartRecords::getKdcCOde() {
-    return KdcCode;
-}
-
-std::string ChartRecords::getDiagnose() {
-    return diagnose;
-}
 
 std::string ChartRecords::getCC() {
     return cc;

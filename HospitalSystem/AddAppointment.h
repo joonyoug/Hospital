@@ -30,4 +30,7 @@ public:
 	CString getComboBox();
 	void setParent(CWnd* pParent);
 	void NotifyParent();
+	
+	afx_msg void OnMcnSelectMonthcalendardoctorpage(NMHDR* pNMHDR, LRESULT* pResult);
+	
 };

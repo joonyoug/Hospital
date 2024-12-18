@@ -34,4 +34,5 @@ protected:
 public:
 	afx_msg void OnBnClickedButtonlogin();
 	afx_msg void OnBnClickedRegister();
+	afx_msg void OnMenuBilling();
 };

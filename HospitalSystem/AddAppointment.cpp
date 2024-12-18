@@ -27,6 +27,9 @@ void AddAppointment::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(AddAppointment, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_Appointment, &AddAppointment::OnBnClickedButtonAppointment)
+	
+	ON_NOTIFY(MCN_SELECT, IDC_MONTHCALENDAR_doctorPage, &AddAppointment::OnMcnSelectMonthcalendardoctorpage)
+	
 END_MESSAGE_MAP()
 
 
@@ -136,3 +139,21 @@ void AddAppointment::NotifyParent() {
 		}
 	}
 }
+
+
+
+
+
+void AddAppointment::OnMcnSelectMonthcalendardoctorpage(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMSELCHANGE pSelChange = reinterpret_cast<LPNMSELCHANGE>(pNMHDR);
+	
+
+	
+
+
+
+
+	*pResult = 0;
+}
+
