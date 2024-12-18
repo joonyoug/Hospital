@@ -51,13 +51,28 @@ public:
 	CListCtrl m_listAppointment;
 	afx_msg void OnNMClickListappointment(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnNMClickListPatientinformation(NMHDR* pNMHDR, LRESULT* pResult);
+<<<<<<< HEAD
+=======
+	void drawInitialChart();
+>>>>>>> upstream/dev
 	CListCtrl m_listVaccin;
 	CMonthCalCtrl m_doctorPageCal;
 	CString getTime();
 	afx_msg void OnMcnSelectMonthcalendardoctorpage(NMHDR* pNMHDR, LRESULT* pResult);
 	CButton m_static;
+<<<<<<< HEAD
 	
 	std::vector<std::string> split(std::string dcode,std::string delimeter);
 	afx_msg void OnBnClickedButtonOkd();
 	afx_msg void OnBnClickedButtonOkm();
+=======
+	void drawWait();
+	std::vector<std::string> split(std::string dcode,std::string delimeter);
+	afx_msg void OnBnClickedButtonOkd();
+	afx_msg void OnBnClickedButtonOkm();
+	CListCtrl m_listWait;
+	bool deleteWait(CString residentNumber);
+
+	afx_msg void OnNMClickListWait(NMHDR* pNMHDR, LRESULT* pResult);
+>>>>>>> upstream/dev
 };

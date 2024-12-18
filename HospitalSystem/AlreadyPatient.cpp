@@ -6,6 +6,10 @@
 #include "afxdialogex.h"
 #include "AlreadyPatient.h"
 #include "PatientController.h"
+<<<<<<< HEAD
+=======
+#include "WaitPatientDB.h"
+>>>>>>> upstream/dev
 
 
 // AlreadyPatient 대화 상자
@@ -32,6 +36,7 @@ void AlreadyPatient::setParent(CWnd* p) {
 void AlreadyPatient::NotifyParent() {
   
     if (pParnet != nullptr) {
+<<<<<<< HEAD
         CString name;
         GetDlgItemText(IDC_EDIT_PatientName, name);
         HosipitalOffice* pDoctorPage = dynamic_cast<HosipitalOffice*>(pParnet);
@@ -42,6 +47,18 @@ void AlreadyPatient::NotifyParent() {
 
 
 
+=======
+        
+        HosipitalOffice* pDoctorPage = dynamic_cast<HosipitalOffice*>(pParnet);
+        if (pDoctorPage) {
+            pDoctorPage->UpdateWait(m_name);
+            WaitPatientDB db;
+            db.addWait(std::string(CT2A(m_name)), std::string(CT2A(m_resident)));
+
+
+        }
+    }
+>>>>>>> upstream/dev
 }
 
 BEGIN_MESSAGE_MAP(AlreadyPatient, CDialogEx)
@@ -55,11 +72,18 @@ END_MESSAGE_MAP()
 void AlreadyPatient::OnBnClickedButton1()
 {
     PatientController p;
+<<<<<<< HEAD
     CString residentnumber;
     GetDlgItemText(IDC_EDIT_ResidentNumber, residentnumber);
     PatientDto dto=p.selectPatient(std::string(CT2A(residentnumber)));
     if (dto.name != "") {
 
+=======
+    GetDlgItemText(IDC_EDIT_PatientName, m_name);
+    GetDlgItemText(IDC_EDIT_ResidentNumber, m_resident);
+    PatientDto dto=p.selectPatient(std::string(CT2A(m_resident)));
+    if (dto.name != "") {
+>>>>>>> upstream/dev
         NotifyParent();
         this->EndDialog(IDOK);
     }

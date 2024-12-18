@@ -20,6 +20,10 @@ std::vector<VaccinnationsDto> VaccinnationsDB::selectVaccin(std::string resident
 			std::string v_name = res->getString("v_name");
 			std::string d_name = res->getString("d_name");
 			int th = res->getInt("th");
+<<<<<<< HEAD
+=======
+			//std::cout << th << std::endl;
+>>>>>>> upstream/dev
 			VaccinnationsDto va(resident_number, date, v_name, d_name, th);
 			dto.push_back(va);
 		}

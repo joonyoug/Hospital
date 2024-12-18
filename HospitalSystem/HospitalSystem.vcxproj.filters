@@ -156,8 +156,22 @@
     <ClInclude Include="PrescriptionsController.h">
       <Filter>소스 파일\Controller</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="CBillingDialog.h">
       <Filter>헤더 파일</Filter>
+=======
+    <ClInclude Include="DetailPage.h">
+      <Filter>소스 파일\View</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchPage.h">
+      <Filter>소스 파일\View</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitPatient.h">
+      <Filter>소스 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitPatientDB.h">
+      <Filter>소스 파일\Database</Filter>
+>>>>>>> upstream/dev
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -278,8 +292,22 @@
     <ClCompile Include="PrescriptionsController.cpp">
       <Filter>소스 파일\Controller</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="CBillingDialog.cpp">
       <Filter>소스 파일</Filter>
+=======
+    <ClCompile Include="DetailPage.cpp">
+      <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchPage.cpp">
+      <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitPatient.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitPatientDB.cpp">
+      <Filter>소스 파일\Database</Filter>
+>>>>>>> upstream/dev
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,11 @@
 #include "AppointmentDto.h"
 #include <vector>
 #include "AppointmentDto.h"
+<<<<<<< HEAD
+=======
+#include "DetailPage.h"
+#include "SearchPage.h"
+>>>>>>> upstream/dev
 // HosipitalOffice 대화 상자
 
 class HosipitalOffice : public CDialogEx
@@ -47,5 +52,16 @@ public:
 	afx_msg void OnMenuDoctor();
 	afx_msg void OnMcnSelectMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult);
 	CString getTime();
+<<<<<<< HEAD
 	CMonthCalCtrl m_officePageCal;
+=======
+	void detailPatient();
+	CMonthCalCtrl m_officePageCal;
+	DetailPage* m_detail=nullptr;
+	CString m_resident;
+	SearchPage* m_search = nullptr;
+	afx_msg void OnDestroy();
+	afx_msg void OnBnClickedButtonSearchpatient();
+	afx_msg void OnNMRClicAppointment(NMHDR* pNMHDR, LRESULT* pResult);
+>>>>>>> upstream/dev
 };

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  AddAppointment.cpp
   Addpatients.cpp
 C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\HospitalSystem\Addpatients.cpp(73,41): warning C4101: 'e' :참조되지 않은 지역 변수입니다.
@@ -50,16 +51,58 @@ AddAppointment.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/
 Addpatients.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 AlreadyPatient.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 CBillingDialog.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+=======
+﻿  DoctorPage1.cpp
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DoctorPage1.cpp(128,26): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DoctorPage1.cpp(129,27): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DoctorPage1.cpp(182,26): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\DoctorPage1.cpp(183,27): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
+  
+  HosipitalOffice.cpp
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HosipitalOffice.cpp(134,21): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HosipitalOffice.cpp(135,22): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HosipitalOffice.cpp(136,22): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\test\HospitalSystem\HospitalSystem\HosipitalOffice.cpp(137,22): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
+  
+AddAppointment.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+Addpatients.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+AlreadyPatient.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+DetailPage.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+>>>>>>> upstream/dev
 DoctorPage1.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 HosipitalOffice.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 HospitalSystem.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 HospitalSystemDlg.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+<<<<<<< HEAD
 SignUP.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
      C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\x64\Release\HospitalSystem.lib 라이브러리 및 C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\x64\Release\HospitalSystem.exp 개체를 생성하고 있습니다.
   코드를 생성하고 있습니다.
   27 of 2187 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     49 functions had inline decision re-evaluated but remain unchanged
+=======
+SearchPage.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+SignUP.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+     C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.lib 라이브러리 및 C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.exp 개체를 생성하고 있습니다.
+  코드를 생성하고 있습니다.
+  3 of 2231 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+>>>>>>> upstream/dev
   코드를 생성했습니다.
 mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_driver.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_connection.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
@@ -83,4 +126,8 @@ mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj) : warning LNK4099: '
 mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 mysqlcppconn-static.lib(mysql_art_rset_metadata.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_art_rset_metadata.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 mysqlcppconn-static.lib(mysql_resultset_metadata.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_resultset_metadata.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+<<<<<<< HEAD
   HospitalSystem.vcxproj -> C:\Users\jeong\Downloads\Hospital-dev (1)\Hospital-dev\x64\Release\HospitalSystem.exe
+=======
+  HospitalSystem.vcxproj -> C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.exe
+>>>>>>> upstream/dev

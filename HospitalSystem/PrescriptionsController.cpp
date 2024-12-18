@@ -3,11 +3,18 @@
 
 
 bool PrescriptionsController::addPrescriptions(std::string residentNumber, std::string employee_number
+<<<<<<< HEAD
 	, std::string date, std::string method, std::string dosage, float daily_dosage,
 	int frequency, int duration, std::string notes) {
 	PrescriptionsDB db;	
 
 	if (db.addPrescriptions(residentNumber, employee_number, date, method, dosage, daily_dosage, frequency, duration, notes)) {
+=======
+	, std::string date, std::string method,std::string name) {
+	PrescriptionsDB db;	
+
+	if (db.addPrescriptions(residentNumber, employee_number, date, method,name)) {
+>>>>>>> upstream/dev
 		return true;
 	}
 	else {

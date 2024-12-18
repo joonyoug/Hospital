@@ -85,8 +85,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+<<<<<<< HEAD
     <IncludePath>C:\Program Files\MySQL\MySQL Server 8.0\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\MySQL\MySQL Server 8.0\lib;$(LibraryPath)</LibraryPath>
+=======
+>>>>>>> upstream/dev
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -167,13 +170,21 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>STATIC_CONCPP;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>C:\Users\jeong\OneDrive\문서\libraries\mysql8.0.32-64\include</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\epgis\Desktop\mysql8.0.32-64\include</AdditionalIncludeDirectories>
+>>>>>>> upstream/dev
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+<<<<<<< HEAD
       <AdditionalLibraryDirectories>C:\Users\jeong\OneDrive\문서\libraries\mysql8.0.32-64\lib64\vs14</AdditionalLibraryDirectories>
+=======
+      <AdditionalLibraryDirectories>C:\Users\epgis\Desktop\mysql8.0.32-64\lib64\vs14</AdditionalLibraryDirectories>
+>>>>>>> upstream/dev
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
@@ -195,7 +206,10 @@
     <ClInclude Include="AppointmentController.h" />
     <ClInclude Include="AppointmentDB.h" />
     <ClInclude Include="AppointmentDto.h" />
+<<<<<<< HEAD
     <ClInclude Include="CBillingDialog.h" />
+=======
+>>>>>>> upstream/dev
     <ClInclude Include="ChartHistoryController.h" />
     <ClInclude Include="ChartHistoryDB.h" />
     <ClInclude Include="ChartRecords.h" />
@@ -206,6 +220,10 @@
     <ClInclude Include="DcodeController.h" />
     <ClInclude Include="DcodeDB.h" />
     <ClInclude Include="Decision.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="DetailPage.h" />
+>>>>>>> upstream/dev
     <ClInclude Include="DoctorPage1.h" />
     <ClInclude Include="HosipitalOffice.h" />
     <ClInclude Include="framework.h" />
@@ -225,12 +243,21 @@
     <ClInclude Include="PrescriptionsController.h" />
     <ClInclude Include="PrescriptionsDB.h" />
     <ClInclude Include="Resource.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="SearchPage.h" />
+>>>>>>> upstream/dev
     <ClInclude Include="SignUP.h" />
     <ClInclude Include="SignUpController.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Vaccinnations.h" />
     <ClInclude Include="VaccinnationsDB.h" />
     <ClInclude Include="VaccinnationsDto.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="WaitPatient.h" />
+    <ClInclude Include="WaitPatientDB.h" />
+>>>>>>> upstream/dev
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAppointment.cpp" />
@@ -240,7 +267,10 @@
     <ClCompile Include="AppointmentController.cpp" />
     <ClCompile Include="AppointmentDB.cpp" />
     <ClCompile Include="AppointmentDto.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="CBillingDialog.cpp" />
+=======
+>>>>>>> upstream/dev
     <ClCompile Include="ChartHistoryController.cpp" />
     <ClCompile Include="ChartHistoryDB.cpp" />
     <ClCompile Include="ChartRecords.cpp" />
@@ -251,6 +281,10 @@
     <ClCompile Include="DcodeController.cpp" />
     <ClCompile Include="DcodeDB.cpp" />
     <ClCompile Include="Decision.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="DetailPage.cpp" />
+>>>>>>> upstream/dev
     <ClCompile Include="DoctorPage1.cpp" />
     <ClCompile Include="HosipitalOffice.cpp" />
     <ClCompile Include="HospitalSystem.cpp" />
@@ -273,11 +307,20 @@
     <ClCompile Include="Prescriptions.cpp" />
     <ClCompile Include="PrescriptionsController.cpp" />
     <ClCompile Include="PrescriptionsDB.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="SearchPage.cpp" />
+>>>>>>> upstream/dev
     <ClCompile Include="SignUP.cpp" />
     <ClCompile Include="SignUpController.cpp" />
     <ClCompile Include="Vaccinnations.cpp" />
     <ClCompile Include="VaccinnationsDB.cpp" />
     <ClCompile Include="VaccinnationsDto.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="WaitPatient.cpp" />
+    <ClCompile Include="WaitPatientDB.cpp" />
+>>>>>>> upstream/dev
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HospitalSystem.rc" />

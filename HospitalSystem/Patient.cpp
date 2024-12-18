@@ -4,7 +4,11 @@
 Patient::Patient() {}
 // 생성자 정의 (참조 매개변수 사용)
 Patient::Patient(const std::string& residentNumber, const std::string& name, const std::string& phone,
+<<<<<<< HEAD
     const std::string& gender, const std::string& address, int emergencyNumber, const std::string& dosingList,
+=======
+    const std::string& gender, const std::string& address,const std::string &emergencyNumber, const std::string& dosingList,
+>>>>>>> upstream/dev
     const std::string& bloodType)
     : residentNumber(residentNumber), name(name), phone(phone),
     gender(gender), address(address), dosingList(dosingList),
@@ -39,6 +43,10 @@ std::string Patient::getBloodType() {
 std::string Patient::getGender() {
     return gender;
 }
+<<<<<<< HEAD
 int Patient::getEmergencyNumber() {
+=======
+std::string Patient::getEmergencyNumber() {
+>>>>>>> upstream/dev
     return emergencyNumber;
 }

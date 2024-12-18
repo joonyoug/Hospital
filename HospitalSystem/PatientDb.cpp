@@ -26,7 +26,11 @@ bool PatientDb::addPatient(Patient patient) {
 		ptsmt->setString(3, patient.getGender());
 		ptsmt->setString(4, patient.getAddress());
 		ptsmt->setString(5, patient.getPhone());
+<<<<<<< HEAD
 		ptsmt->setInt(6, patient.getEmergencyNumber());
+=======
+		ptsmt->setString(6, patient.getEmergencyNumber());
+>>>>>>> upstream/dev
 		ptsmt->setString(7, patient.getDosingList());
 		ptsmt->setString(8, patient.getBloodType());
 
@@ -67,7 +71,11 @@ Patient PatientDb::searchPatient(std::string name) {
 				res->getString("phone_number").asStdString(),
 				res->getString("gender").asStdString(),
 				res->getString("address").asStdString(),
+<<<<<<< HEAD
 				res->getInt("emergency_number"),  // 정수형 그대로 사용
+=======
+				res->getString("emergency_number").asStdString(),  
+>>>>>>> upstream/dev
 				res->getString("dosing_list").asStdString(),
 				res->getString("blood_type").asStdString()
 			);
@@ -83,12 +91,16 @@ Patient PatientDb::searchPatient(std::string name) {
 		delete pstmt;
 
 	}
+<<<<<<< HEAD
 
 
 }
 
 
 
+=======
+}
+>>>>>>> upstream/dev
 Patient PatientDb::selectPatient(std::string residentNumber) {
 	sql::PreparedStatement* pstmt = nullptr;
 
@@ -106,7 +118,11 @@ Patient PatientDb::selectPatient(std::string residentNumber) {
 				res->getString("phone_number").asStdString(),
 				res->getString("gender").asStdString(),
 				res->getString("address").asStdString(),
+<<<<<<< HEAD
 				res->getInt("emergency_number"),  // 정수형 그대로 사용
+=======
+				res->getString("emergency_number").asStdString(), 
+>>>>>>> upstream/dev
 				res->getString("dosing_list").asStdString(),
 				res->getString("blood_type").asStdString()
 			);

@@ -8,6 +8,11 @@
 #define IDD_HOSPITALSYSTEM_DIALOG       102
 #define IDD_AlreadyPatient              103
 #define IDD_DoctorPage1                 104
+<<<<<<< HEAD
+=======
+#define IDD_DetailPage                  105
+#define IDD_SearchPage                  106
+>>>>>>> upstream/dev
 #define IDR_MAINFRAME                   128
 #define IDD_DIALOG_SignUP               130
 #define IDD_DIALOG_Doctor               132
@@ -15,8 +20,11 @@
 #define IDD_DIALOG_AddPatient           136
 #define IDD_DIALOG_Add_Appointment      138
 #define IDR_MENU1                       141
+<<<<<<< HEAD
 #define IDD_DIALOG1_Payment             142
 #define IDC_BUTTON_PRINT_RECEIPT        142
+=======
+>>>>>>> upstream/dev
 #define ID_Button_login                 1000
 #define IDC_EDIT_INput_Id               1001
 #define IDC_EDIT_INput_PW               1002
@@ -89,6 +97,7 @@
 #define IDC_LIST_appointment            1080
 #define IDC_EDIT1                       1081
 #define IDC_EDIT_daily_dosage           1081
+<<<<<<< HEAD
 #define IDC_EDIT_SSN                    1081
 #define IDC_EDIT2                       1082
 #define IDC_EDIT_frequency              1082
@@ -121,6 +130,37 @@
 #define IDC_STATIC_PAYMENT_PDATE        1110
 #define IDC_STATIC_PAYMENT_DATE         1111
 #define IDC_LIST_PRESCRIPTIONS          1112
+=======
+#define IDC_EDIT_detaiName              1081
+#define IDC_EDIT_srn                    1081
+#define IDC_EDIT2                       1082
+#define IDC_EDIT_frequency              1082
+#define IDC_EDIT_detailResidentNumber   1082
+#define IDC_EDIT3                       1083
+#define IDC_EDIT_duration               1083
+#define IDC_EDIT_detailGender           1083
+#define IDC_EDIT4                       1084
+#define IDC_EDIT_note                   1084
+#define IDC_EDIT_detailAddr             1084
+#define IDC_MONTHCALENDAR_doctorPage    1085
+#define IDC_EDIT_detailPhone            1086
+#define IDC_EDIT_SearchName             1086
+#define IDC_EDIT_detailEmer             1087
+#define IDC_EDIT_searchPhone            1087
+#define IDC_EDIT_detailDosing           1088
+#define IDC_EDIT_searchlEmer            1088
+#define IDC_EDIT_detailBloody           1089
+#define IDC_EDIT_searchDosing           1089
+#define IDC_BUTTON_SearchPatient        1090
+#define IDC_EDIT_searchBloody           1090
+#define IDC_BUTTON_Search               1091
+#define IDC_EDIT_searchlResidentNumber  1092
+#define IDC_EDIT_searchGender           1093
+#define IDC_EDIT_searchAddr             1094
+#define IDC_SCROLLBAR1                  1095
+#define IDC_BUTTON9                     1096
+#define IDC_LIST2                       1097
+>>>>>>> upstream/dev
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -131,7 +171,12 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        144
 #define _APS_NEXT_COMMAND_VALUE         32774
+<<<<<<< HEAD
 #define _APS_NEXT_CONTROL_VALUE         1113
 #define _APS_NEXT_SYMED_VALUE           105
+=======
+#define _APS_NEXT_CONTROL_VALUE         1098
+#define _APS_NEXT_SYMED_VALUE           107
+>>>>>>> upstream/dev
 #endif
 #endif
