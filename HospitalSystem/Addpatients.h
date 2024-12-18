@@ -28,6 +28,9 @@ public:
 	CString getGender();
 	CButton m_checkbox_man;
 	CButton m_checkbox_woman;
+	CString m_name;
+	CString m_resident;
+
 	void setParent(CWnd* p);
 	void NotifyParent();
 

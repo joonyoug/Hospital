@@ -6,6 +6,7 @@
 #include "afxdialogex.h"
 #include "Addpatients.h"
 #include "PatientController.h"
+#include "WaitPatientDB.h"
 // Addpatients 대화 상자
 
 IMPLEMENT_DYNAMIC(Addpatients, CDialogEx)
@@ -50,13 +51,13 @@ CString Addpatients::getGender() {
 
 void Addpatients::OnBnClickedButtonAdd()
 {
-    CString phone, addr, name, residentNumber, gender, dosing_list, blood_type, emergencyNumber;
+    CString phone, addr, gender, dosing_list, blood_type, emergencyNumber;
 
     // 각 입력 필드에서 텍스트 가져오기
-    GetDlgItemText(IDC_EDIT_PatientName, name);
+    GetDlgItemText(IDC_EDIT_PatientName, m_name);
     GetDlgItemText(IDC_EDIT_Patient_Phon, phone);
     GetDlgItemText(IDC_EDIT_PatientAddr, addr);
-    GetDlgItemText(IDC_EDIT_ResidentNumber, residentNumber);
+    GetDlgItemText(IDC_EDIT_ResidentNumber, m_resident);
     GetDlgItemText(IDC_EDIT_dosing_list, dosing_list);
     GetDlgItemText(IDC_EDIT_blood_type, blood_type);
     GetDlgItemText(IDC_EDIT_emergencyNumber, emergencyNumber);
@@ -82,8 +83,8 @@ void Addpatients::OnBnClickedButtonAdd()
     PatientController patient;
 
     if (patient.addPatient(
-        std::string(CT2A(residentNumber)),
-        std::string(CT2A(name)),
+        std::string(CT2A(m_resident)),
+        std::string(CT2A(m_name)),
         std::string(CT2A(phone)),
         std::string(CT2A(gender)),
         std::string(CT2A(addr)),
@@ -105,12 +106,16 @@ void Addpatients::setParent(CWnd* pParent) {
 }
 void Addpatients::NotifyParent() {
 
+
+
     if (pParnet != nullptr) {
-        CString name;
-        GetDlgItemText(IDC_EDIT_PatientName, name);
+        
         HosipitalOffice* pDoctorPage = dynamic_cast<HosipitalOffice*>(pParnet);
+        
         if (pDoctorPage) {
-            pDoctorPage->UpdateWait(name);
+            pDoctorPage->UpdateWait(m_name);
+            WaitPatientDB db;
+            db.addWait(std::string(CT2A(m_name)), std::string(CT2A(m_resident)));
         }
     }
 }

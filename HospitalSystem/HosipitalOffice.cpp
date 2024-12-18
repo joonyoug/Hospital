@@ -11,6 +11,8 @@
 #include "AlreadyPatient.h"
 #include "DoctorPage1.h"
 #include "DetailPage.h"
+#include "WaitPatient.h"
+#include "WaitPatientDB.h"
 #include <vector>
 
 // HosipitalOffice 대화 상자
@@ -33,6 +35,7 @@ BOOL HosipitalOffice::OnInitDialog()
 	drawPatient();
 	drawAppointment();
 	drawWait();
+
 	return TRUE;  // 초기화 완료 후 TRUE 반환
 }
 
@@ -58,6 +61,7 @@ BEGIN_MESSAGE_MAP(HosipitalOffice, CDialogEx)
 	ON_NOTIFY(MCN_SELECT, IDC_MONTHCALENDAR1, &HosipitalOffice::OnMcnSelectMonthcalendar1)
 	ON_WM_DESTROY()
 	ON_BN_CLICKED(IDC_BUTTON_SearchPatient, &HosipitalOffice::OnBnClickedButtonSearchpatient)
+	ON_NOTIFY(NM_RCLICK, IDC_LIST1, &HosipitalOffice::OnNMRClicAppointment)
 END_MESSAGE_MAP()
 
 // HosipitalOffice 메시지 처리기
@@ -89,18 +93,30 @@ void HosipitalOffice::drawWait() {
 	m_list_wait.ModifyStyle(0, LVS_REPORT); // 리포트 뷰 스타일 설정
 	m_list_wait.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
 	m_list_wait.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
+
+	WaitPatientDB db;
+	std::vector<WaitPatient> dto = db.selectWait();
+	std::cout << dto.size() << std::endl;
+	for (int i = 0;i < dto.size();i++) {
+		m_list_wait.InsertItem(i, CString(dto[i].getName().c_str()));
+	}
 }
 void HosipitalOffice::drawAppointment() {
+
 	m_list.DeleteAllItems();
+
 	m_list.ModifyStyle(0, LVS_REPORT);
 	m_list.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT | LVS_EDITLABELS);
 
-	// 컬럼 추가
-	m_list.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
-	m_list.InsertColumn(1, _T("전화번호"), LVCFMT_CENTER, 100);
-	m_list.InsertColumn(2, _T("증상"), LVCFMT_CENTER, 100);
-	m_list.InsertColumn(3, _T("예약일"), LVCFMT_CENTER, 100);
+	
+	if (m_list.GetHeaderCtrl()->GetItemCount()==0) {
+		m_list.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
+		m_list.InsertColumn(1, _T("전화번호"), LVCFMT_CENTER, 100);
+		m_list.InsertColumn(2, _T("증상"), LVCFMT_CENTER, 100);
+		m_list.InsertColumn(3, _T("예약일"), LVCFMT_CENTER, 100);
 
+		
+	}
 	CRect rect;
 	m_list.GetClientRect(&rect);
 	int width = rect.Width(); // 올바른 사용
@@ -236,29 +252,8 @@ void HosipitalOffice::OnMenuDoctor()
 	doc.DoModal();
 }
 
-void HosipitalOffice::drawDayAppointment(std::vector<AppointmentDto> dto) {
-	
-			// 리스트 컨트롤 설정
-	m_list.ModifyStyle(0, LVS_REPORT);
-	m_list.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT);
-
-			// 기존의 모든 항목을 삭제
+void HosipitalOffice::drawDayAppointment(std::vector<AppointmentDto> dto) {	
 	m_list.DeleteAllItems();
-
-			// 컬럼 설정
-	m_list.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
-	m_list.InsertColumn(1, _T("전화번호"), LVCFMT_CENTER, 100);
-	m_list.InsertColumn(2, _T("증상"), LVCFMT_CENTER, 100);
-	m_list.InsertColumn(3, _T("예약일"), LVCFMT_CENTER, 100);
-
-
-			// 열 너비 설정
-	CRect rect;
-	m_list.GetClientRect(&rect);
-	int width = rect.Width();
-	int otherColumnsWidth = 100 * 3;
-	m_list.SetColumnWidth(3, width - otherColumnsWidth);
-
 	if (dto.empty()) {
 			m_list.InsertItem(0, _T("예약 없음"));
 			m_list.SetItemText(0, 1, _T(""));
@@ -282,6 +277,7 @@ void HosipitalOffice::detailPatient() {
 	m_detail->Create(IDD_DetailPage);
 	m_detail->ShowWindow(SW_SHOW);
 
+	
 }
 
 void HosipitalOffice::OnMcnSelectMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult)
@@ -335,4 +331,24 @@ void HosipitalOffice::OnBnClickedButtonSearchpatient()
 	m_search->Create(IDD_SearchPage);
 	m_search->ShowWindow(SW_SHOW);
 
+}
+
+
+void HosipitalOffice::OnNMRClicAppointment(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+
+	CString name;
+
+	int selected = pNMItemActivate->iItem;
+	if (selected != -1) {
+		name=m_list.GetItemText(selected, 0);
+		PatientController db;
+		PatientDto dto=db.searchPatient(std::string(CT2A(name)));
+		UpdateWait(CString(dto.name.c_str()));
+		WaitPatientDB pdb;
+		pdb.addWait(dto.name.c_str(), dto.residentNumber.c_str());
+	}
+	*pResult = 0;
 }

@@ -56,4 +56,5 @@ public:
 	SearchPage* m_search = nullptr;
 	afx_msg void OnDestroy();
 	afx_msg void OnBnClickedButtonSearchpatient();
+	afx_msg void OnNMRClicAppointment(NMHDR* pNMHDR, LRESULT* pResult);
 };

@@ -57,8 +57,12 @@ public:
 	CString getTime();
 	afx_msg void OnMcnSelectMonthcalendardoctorpage(NMHDR* pNMHDR, LRESULT* pResult);
 	CButton m_static;
-	
+	void drawWait();
 	std::vector<std::string> split(std::string dcode,std::string delimeter);
 	afx_msg void OnBnClickedButtonOkd();
 	afx_msg void OnBnClickedButtonOkm();
+	CListCtrl m_listWait;
+	bool deleteWait(CString residentNumber);
+
+	afx_msg void OnNMClickListWait(NMHDR* pNMHDR, LRESULT* pResult);
 };

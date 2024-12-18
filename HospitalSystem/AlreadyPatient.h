@@ -24,5 +24,8 @@ protected:
 public:
 	void setParent(CWnd* p);
 	void NotifyParent();
+	CString m_name;
+	CString m_resident;
+
 	afx_msg void OnBnClickedButton1();
 };

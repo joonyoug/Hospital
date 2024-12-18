@@ -67,7 +67,7 @@ Patient PatientDb::searchPatient(std::string name) {
 				res->getString("phone_number").asStdString(),
 				res->getString("gender").asStdString(),
 				res->getString("address").asStdString(),
-				res->getString("emergency_number").asStdString(),  // 정수형 그대로 사용
+				res->getString("emergency_number").asStdString(),  
 				res->getString("dosing_list").asStdString(),
 				res->getString("blood_type").asStdString()
 			);
@@ -83,12 +83,7 @@ Patient PatientDb::searchPatient(std::string name) {
 		delete pstmt;
 
 	}
-
-
 }
-
-
-
 Patient PatientDb::selectPatient(std::string residentNumber) {
 	sql::PreparedStatement* pstmt = nullptr;
 
@@ -106,7 +101,7 @@ Patient PatientDb::selectPatient(std::string residentNumber) {
 				res->getString("phone_number").asStdString(),
 				res->getString("gender").asStdString(),
 				res->getString("address").asStdString(),
-				res->getString("emergency_number").asStdString(),  // 정수형 그대로 사용
+				res->getString("emergency_number").asStdString(), 
 				res->getString("dosing_list").asStdString(),
 				res->getString("blood_type").asStdString()
 			);

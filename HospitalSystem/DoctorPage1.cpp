@@ -25,6 +25,7 @@
 #include <chrono>
 #include <iomanip>
 #include <ctime>
+#include "WaitPatientDB.h"
 
 // DoctorPage1 대화 상자
 using namespace std;
@@ -51,7 +52,8 @@ void DoctorPage1::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST_MedicineHistroy, m_listVaccin);
 	DDX_Control(pDX, IDC_MONTHCALENDAR_doctorPage, m_doctorPageCal);
 	DDX_Control(pDX, IDC_BUTTON1, m_static);
-	
+
+	DDX_Control(pDX, IDC_LIST2, m_listWait);
 }
 
 BOOL DoctorPage1::OnInitDialog()
@@ -69,6 +71,7 @@ BOOL DoctorPage1::OnInitDialog()
 	DrawAppointment();
 	DrawPatient();
 	drawInitialChart();
+	drawWait();
 	return TRUE;
 }
 
@@ -83,6 +86,7 @@ BEGIN_MESSAGE_MAP(DoctorPage1, CDialogEx)
 	
 	ON_BN_CLICKED(IDC_BUTTON_OKD, &DoctorPage1::OnBnClickedButtonOkd)
 	ON_BN_CLICKED(IDC_BUTTON_OKM, &DoctorPage1::OnBnClickedButtonOkm)
+	ON_NOTIFY(NM_CLICK, IDC_LIST2, &DoctorPage1::OnNMClickListWait)
 END_MESSAGE_MAP()
 
 
@@ -132,7 +136,7 @@ void DoctorPage1::setResidentNumber(std::string residentNumber) {
 void DoctorPage1::drawPatientInfo(CString name) {
 	PatientController pt;
 	PatientDto dto = pt.searchPatient(std::string(CT2A(name)));
-
+	m_patientInfo.DeleteAllItems();
 	// 환자 정보를 조회할 수 없을 때
 	if (dto.residentNumber.empty()) {
 		// 예외 처리: 환자 정보가 없을 경우 사용자에게 알림
@@ -140,17 +144,16 @@ void DoctorPage1::drawPatientInfo(CString name) {
 		return;
 	}
 
-	// 환자 정보를 멤버 변수에 저장
+	
 	m_residentNumber = dto.residentNumber;
 	m_name = dto.name;
 
-	// 리스트에 첫 번째 항목을 수정하거나 추가
-	int index = m_patientInfo.GetItemCount() > 0 ? 0 : m_patientInfo.InsertItem(0, CString(dto.name.c_str()));
 
 	// 각 항목의 텍스트 설정
-	m_patientInfo.SetItemText(index, 1, CString(dto.residentNumber.c_str()));  // 주민등록번호
-	m_patientInfo.SetItemText(index, 2, CString(dto.gender.c_str()));        // 성별
-	m_patientInfo.SetItemText(index, 3, CString(dto.phone.c_str()));         // 전화번호
+	m_patientInfo.InsertItem(0, CString(dto.name.c_str()));
+	m_patientInfo.SetItemText(0, 1, CString(dto.residentNumber.c_str()));  // 주민등록번호
+	m_patientInfo.SetItemText(0, 2, CString(dto.gender.c_str()));        // 성별
+	m_patientInfo.SetItemText(0, 3, CString(dto.phone.c_str()));         // 전화번호
 	for (int col = 0; col < m_patientInfo.GetHeaderCtrl()->GetItemCount(); col++) {
 		m_patientInfo.SetColumnWidth(col, LVSCW_AUTOSIZE_USEHEADER);
 	}
@@ -283,11 +286,11 @@ void DoctorPage1::drawVaccinations() {
 	m_listVaccin.SetColumnWidth(1, width - otherColumnsWidth);
 	CString th;
 
-	for (int i = 0; dto.size(); i++) 
+	for (int i = 0;i< dto.size(); i++) 
 	{
 		m_listVaccin.InsertItem(i, CString(dto[i].v_name.c_str()));
 		m_listVaccin.SetItemText(i, 1, CString(dto[i].d_name.c_str()));
-		th.Format(_T("%d"), dto[i]);
+		th.Format(_T("%d"), dto[i].th);
 		m_listVaccin.SetItemText(i, 2, th);
 		m_listVaccin.SetItemText(i, 3, CString(dto[i].date.c_str()));
 	}
@@ -386,10 +389,10 @@ void DoctorPage1::OnNMClickListPatientinformation(NMHDR* pNMHDR, LRESULT* pResul
 
 void DoctorPage1::OnMcnSelectMonthcalendardoctorpage(NMHDR* pNMHDR, LRESULT* pResult)
 {
-	// 날짜 선택 이벤트 처리
+	
 	LPNMSELCHANGE pSelChange = reinterpret_cast<LPNMSELCHANGE>(pNMHDR);
 
-	// 선택된 날짜를 문자열로 변환 (예시: "2024/12/12")
+	
 	CString str = getTime();
 
 	// 예약 목록 불러오기
@@ -474,26 +477,38 @@ void DoctorPage1::OnBnClickedButtonOkd()
 		AfxMessageBox(_T("추가실패."));
 	}
 	else {
+		deleteWait(resident);
 		AfxMessageBox(_T("추가"));
 	}
 
 }
+void DoctorPage1::drawWait() {
+	m_listWait.ModifyStyle(0, LVS_REPORT); // 리포트 뷰 스타일 설정
+	m_listWait.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
+	m_listWait.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
 
+	WaitPatientDB db;
+	std::vector<WaitPatient> dto = db.selectWait();
+	std::cout << dto.size() << std::endl;
+	for (int i = 0;i < dto.size();i++) {
+		m_listWait.InsertItem(i, CString(dto[i].getName().c_str()));
+	}
+}
 void DoctorPage1::OnBnClickedButtonOkm()
 {
 	/*std::string residentNumber, std::string employee_number
 		, std::string date, std::string method, std::string dosage, float daily_dosage,
 		int frequency, int duration, std::string notes
 */
-	CString residentNumber, employee_number, date, method, dosage, daily_dosage, frequency, duration, notes;
+	CString residentNumber, employee_number, date, method, mcode;
 
 	GetDlgItemText(IDC_EDIT_ResidentNumber, residentNumber);
 	GetDlgItemText(IDC_EDIT_Method, method);
-	GetDlgItemText(IDC_EDIT_dosage, dosage);
-	GetDlgItemText(IDC_EDIT_daily_dosage,daily_dosage);
-	GetDlgItemText(IDC_EDIT_frequency, frequency);
-	GetDlgItemText(IDC_EDIT_duration, duration);
-	GetDlgItemText(IDC_EDIT_note, notes);
+	GetDlgItemText(IDC_EDIT_Mcode, mcode);
+////	GetDlgItemText(IDC_EDIT_daily_dosage,daily_dosage);
+//	GetDlgItemText(IDC_EDIT_frequency, frequency);
+	//GetDlgItemText(IDC_EDIT_duration, duration);
+//	GetDlgItemText(IDC_EDIT_note, notes);
 	PrescriptionsController ppc;
 	auto now = chrono::system_clock::now();
 	time_t now_c = chrono::system_clock::to_time_t(now);
@@ -502,13 +517,37 @@ void DoctorPage1::OnBnClickedButtonOkm()
 	stringstream ss;
 	ss << put_time(&now_tm, "%Y-%m-%d %H:%M:%S");
 
-	bool check = ppc.addPrescriptions(std::string(CT2A(residentNumber)),std::string(CT2A(employee_number)),ss.str(),
-		std::string(CT2A(method)),std::string(CT2A(dosage)),_ttof(daily_dosage),_ttoi(frequency),_ttoi(duration),std::string(CT2A(notes)));
-
+	bool check = ppc.addPrescriptions(std::string(CT2A(residentNumber)), std::string(CT2A(doctorId)), ss.str(),
+		std::string(CT2A(method)),std::string(CT2A(mcode)));
 	if (check) {
 		AfxMessageBox(_T("등록"));
 	}
 	else {
 		AfxMessageBox(_T("실패"));
 	}	
+}
+bool DoctorPage1::deleteWait(CString residentNumber) {
+	
+	WaitPatientDB db;
+	bool check=db.deleteWait(std::string(CT2A(residentNumber)));
+	m_listWait.DeleteAllItems();
+
+	std::vector<WaitPatient> dto = db.selectWait();
+
+	for (int i = 0;i < dto.size();i++) {
+		m_listWait.InsertItem(i, CString(dto[i].getName().c_str()));
+	}
+}
+
+void DoctorPage1::OnNMClickListWait(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
+	int selected = pNMItemActivate->iItem;
+	if (selected != -1) {
+		drawPatientInfo(m_listWait.GetItemText(selected, 0));
+		drawChartHistory();
+		drawVaccinations();
+		
+	}
+	*pResult = 0;
 }

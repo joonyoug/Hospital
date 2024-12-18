@@ -115,6 +115,9 @@
 #define IDC_EDIT_searchlResidentNumber  1092
 #define IDC_EDIT_searchGender           1093
 #define IDC_EDIT_searchAddr             1094
+#define IDC_SCROLLBAR1                  1095
+#define IDC_BUTTON9                     1096
+#define IDC_LIST2                       1097
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -125,7 +128,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        144
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1095
+#define _APS_NEXT_CONTROL_VALUE         1098
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif

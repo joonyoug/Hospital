@@ -8,8 +8,6 @@
 #include "PatientController.h"
 #include "PatientDto.h"
 
-
-
 // DetailPage 대화 상자
 
 IMPLEMENT_DYNAMIC(DetailPage, CDialogEx)
@@ -50,12 +48,7 @@ void DetailPage::drawDetail() {
 	SetDlgItemText(IDC_EDIT_detailGender, CString(dt.gender.c_str()));
 	SetDlgItemText(IDC_EDIT_detailBloody, CString(dt.bloodType.c_str()));
 	SetDlgItemText(IDC_EDIT_detailPhone, CString(dt.phone.c_str()));
-
-
-
 }
-
-
 BOOL DetailPage::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();

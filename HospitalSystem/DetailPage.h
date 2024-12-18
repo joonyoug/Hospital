@@ -24,6 +24,5 @@ public:
 	CString residentNumber;
 	void drawDetail();
 	void setResident(CString residentNumber);
-
 	virtual BOOL OnInitDialog();
 };

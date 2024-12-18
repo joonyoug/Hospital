@@ -15,10 +15,10 @@ Prescriptions(std::string& resident_number, std::string& employee_numner,
 	int getDuration();
 */
 Prescriptions::Prescriptions(std::string& resident_number, std::string& employee_numner,
-	std::string& date, std::string& method, std::string& dosage,
-	float daily_dosage, int frequency, int duration,std::string text) :resident_number(resident_number), employee_number(employee_numner),
-	date(date), method(method), dosage(dosage), daily_dosage(daily_dosage), frequency(frequency), duration(duration) ,text(text){
-}
+	std::string& date, std::string& method,std::string&name) :resident_number(resident_number), employee_number(employee_numner),
+	date(date), method(method) ,name(name){
+};
+
 
 std::string Prescriptions::getResidentNumber() {
 	return this->resident_number;

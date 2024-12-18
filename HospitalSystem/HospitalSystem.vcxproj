@@ -230,6 +230,8 @@
     <ClInclude Include="Vaccinnations.h" />
     <ClInclude Include="VaccinnationsDB.h" />
     <ClInclude Include="VaccinnationsDto.h" />
+    <ClInclude Include="WaitPatient.h" />
+    <ClInclude Include="WaitPatientDB.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAppointment.cpp" />
@@ -278,6 +280,8 @@
     <ClCompile Include="Vaccinnations.cpp" />
     <ClCompile Include="VaccinnationsDB.cpp" />
     <ClCompile Include="VaccinnationsDto.cpp" />
+    <ClCompile Include="WaitPatient.cpp" />
+    <ClCompile Include="WaitPatientDB.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HospitalSystem.rc" />
