@@ -167,13 +167,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>STATIC_CONCPP;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\jeong\OneDrive\문서\libraries\mysql8.0.32-64\include;C:\Users\jeong\jsoncpp-master\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\epgis\Desktop\mysql8.0.32-64\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\jeong\OneDrive\문서\libraries\mysql8.0.32-64\lib64\vs14</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\epgis\Desktop\mysql8.0.32-64\lib64\vs14</AdditionalLibraryDirectories>
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>

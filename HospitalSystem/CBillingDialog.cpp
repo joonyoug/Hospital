@@ -58,6 +58,7 @@ BEGIN_MESSAGE_MAP(CBillingDialog, CDialogEx)
     ON_BN_CLICKED(IDC_BUTTON_PRINT_RECEIPT, &CBillingDialog::OnBnClickedButtonPrintReceipt)
     ON_COMMAND(ID_32772, &CBillingDialog::On32772)
 
+   
 END_MESSAGE_MAP()
 
 
@@ -677,4 +678,6 @@ void CBillingDialog::LoadNotes(const CString& residentNumber) {
 
     mysql_free_result(res); // 결과 해제
 }
+
+
 

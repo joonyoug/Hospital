@@ -76,4 +76,5 @@ public:
     afx_msg BOOL OnEraseBkgnd(CDC* pDC);
     afx_msg void OnBnClickedButtonPrintReceipt();
     //afx_msg void OnStnClickedStaticMemo();
+    
 };
