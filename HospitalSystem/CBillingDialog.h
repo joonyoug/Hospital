@@ -28,7 +28,8 @@ protected:
 
 private:
     // UI 컨트롤 변수
-    CEdit m_editMemo; // 메모 입력 필드
+    //CEdit m_editMemo; // 메모 입력 필드
+    CStatic m_staticMemo;
     CEdit m_editSSN;           // 주민등록번호 입력 필드
     CStatic m_staticResult;    // 결과 표시 Static Text
     CListCtrl m_recordList; // 진료 내역을 표시할 List Control
@@ -62,7 +63,7 @@ private:
     void AdjustColumnWidth();   // 열(Column) 너비 조정
     void AdjustColumnWidthForRecords();
     void PrintReceipt(); // 영수증 출력 함수
-
+    void LoadNotes(const CString& residentNumber);
     void MarkAsPaid(const CString& chartID); // 상태를 '완납'으로 변경하는 함수
 
 public:
@@ -70,11 +71,9 @@ public:
     afx_msg void On32772();
     afx_msg void OnBnClickedButtonSearch();
     virtual BOOL OnInitDialog();
-    afx_msg void OnBnClickedButtonSaveMemo();
     afx_msg void OnBnClickedButtonMarkPaid();
     afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
     afx_msg BOOL OnEraseBkgnd(CDC* pDC);
-
     afx_msg void OnBnClickedButtonPrintReceipt();
-
+    //afx_msg void OnStnClickedStaticMemo();
 };
