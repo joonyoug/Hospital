@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\epgis\Desktop\test\HospitalSystem\x64\Release\HospitalSystem.exe</FullPath>
+      <FullPath>C:\Users\epgis\Desktop\testGit\Hospital\x64\Release\HospitalSystem.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

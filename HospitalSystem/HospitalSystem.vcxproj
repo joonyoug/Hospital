@@ -85,6 +85,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files\MySQL\MySQL Server 8.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\MySQL\MySQL Server 8.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -193,6 +195,7 @@
     <ClInclude Include="AppointmentController.h" />
     <ClInclude Include="AppointmentDB.h" />
     <ClInclude Include="AppointmentDto.h" />
+    <ClInclude Include="CBillingDialog.h" />
     <ClInclude Include="ChartHistoryController.h" />
     <ClInclude Include="ChartHistoryDB.h" />
     <ClInclude Include="ChartRecords.h" />
@@ -241,6 +244,7 @@
     <ClCompile Include="AppointmentController.cpp" />
     <ClCompile Include="AppointmentDB.cpp" />
     <ClCompile Include="AppointmentDto.cpp" />
+    <ClCompile Include="CBillingDialog.cpp" />
     <ClCompile Include="ChartHistoryController.cpp" />
     <ClCompile Include="ChartHistoryDB.cpp" />
     <ClCompile Include="ChartRecords.cpp" />

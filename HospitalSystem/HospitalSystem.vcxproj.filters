@@ -168,6 +168,9 @@
     <ClInclude Include="WaitPatientDB.h">
       <Filter>소스 파일\Database</Filter>
     </ClInclude>
+    <ClInclude Include="CBillingDialog.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HospitalSystem.cpp">
@@ -298,6 +301,9 @@
     </ClCompile>
     <ClCompile Include="WaitPatientDB.cpp">
       <Filter>소스 파일\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="CBillingDialog.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
