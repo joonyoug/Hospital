@@ -190,6 +190,10 @@ void DoctorPage1::DrawPatient() {
 	m_patientInfo.InsertColumn(1, _T("주민번호"), LVCFMT_CENTER, 100);
 	m_patientInfo.InsertColumn(2, _T("성"), LVCFMT_CENTER, 100);
 	m_patientInfo.InsertColumn(3, _T("번호"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(0, _T("예방접종명"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(1, _T("약품명"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(2, _T("차수"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(3, _T("일자"), LVCFMT_CENTER, 100);
 
 	
 }
@@ -273,11 +277,7 @@ void DoctorPage1::drawVaccinations() {
 
 	VaccinnationsDB db;
 	std::vector<VaccinnationsDto> dto = db.selectVaccin(m_residentNumber);
-
-	m_listVaccin.InsertColumn(0, _T("예방접종명"), LVCFMT_CENTER, 100);
-	m_listVaccin.InsertColumn(1, _T("약품명"), LVCFMT_CENTER, 100);
-	m_listVaccin.InsertColumn(2, _T("차수"), LVCFMT_CENTER, 100);
-	m_listVaccin.InsertColumn(3, _T("일자"), LVCFMT_CENTER, 100);
+	m_listVaccin.DeleteAllItems();
 
 	CRect rect;
 	m_listVaccin.GetClientRect(&rect);
