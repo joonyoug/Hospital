@@ -1,1 +1,133 @@
 ﻿  pch.cpp
+  AddAppointment.cpp
+  Addpatients.cpp
+  AlreadyPatient.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\AppointmentController.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/AddAppointment.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\PatientDb.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/Addpatients.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\PatientDb.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/AlreadyPatient.cpp'을(를) 컴파일하는 중)
+  
+  Appointment.cpp
+  AppointmentController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\AppointmentController.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/AppointmentController.cpp'을(를) 컴파일하는 중)
+  
+  AppointmentDB.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\AppointmentDB.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/AppointmentDB.cpp'을(를) 컴파일하는 중)
+  
+  AppointmentDto.cpp
+  CBillingDialog.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\CBillingDialog.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/CBillingDialog.cpp'을(를) 컴파일하는 중)
+  
+  ChartHistoryController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/ChartHistoryController.cpp'을(를) 컴파일하는 중)
+  
+  ChartHistoryDB.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/ChartHistoryDB.cpp'을(를) 컴파일하는 중)
+  
+  ChartRecords.cpp
+  ChatHistoryDto.cpp
+  DatabaseManager.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DatabaseManager.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/DatabaseManager.cpp'을(를) 컴파일하는 중)
+  
+  DBconnect.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/DBconnect.cpp'을(를) 컴파일하는 중)
+  
+  Dcode.cpp
+  DcodeController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/DcodeController.cpp'을(를) 컴파일하는 중)
+  
+  DcodeDB.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/DcodeDB.cpp'을(를) 컴파일하는 중)
+  
+  Decision.cpp
+  DetailPage.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\PatientDb.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/DetailPage.cpp'을(를) 컴파일하는 중)
+  
+  DoctorPage1.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\AppointmentController.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  HosipitalOffice.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\AppointmentController.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
+  
+  HospitalSystem.cpp
+  HospitalSystemDlg.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DatabaseManager.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/HospitalSystemDlg.cpp'을(를) 컴파일하는 중)
+  
+  LoginController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DatabaseManager.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/LoginController.cpp'을(를) 컴파일하는 중)
+  
+  Doctor.cpp
+  Mcode.cpp
+  McodeController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/McodeController.cpp'을(를) 컴파일하는 중)
+  
+  McodeDB.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/McodeDB.cpp'을(를) 컴파일하는 중)
+  
+  Patient.cpp
+  PatientController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\PatientDb.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/PatientController.cpp'을(를) 컴파일하는 중)
+  
+  PatientDb.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\PatientDb.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/PatientDb.cpp'을(를) 컴파일하는 중)
+  
+  PatientDto.cpp
+  Prescriptions.cpp
+  PrescriptionsController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/PrescriptionsController.cpp'을(를) 컴파일하는 중)
+  
+  PrescriptionsDB.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/PrescriptionsDB.cpp'을(를) 컴파일하는 중)
+  
+  SearchPage.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\PatientDb.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/SearchPage.cpp'을(를) 컴파일하는 중)
+  
+  SignUP.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DatabaseManager.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/SignUP.cpp'을(를) 컴파일하는 중)
+  
+  SignUpController.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DatabaseManager.h(2,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/SignUpController.cpp'을(를) 컴파일하는 중)
+  
+  Vaccinnations.cpp
+  VaccinnationsDB.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/VaccinnationsDB.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  VaccinnationsDto.cpp
+  WaitPatient.cpp
+  WaitPatientDB.cpp
+C:\Users\epgis\Desktop\testGit\Hospital\HospitalSystem\DBconnect.h(3,10): error C1083: 포함 파일을 열 수 없습니다. 'mysql/jdbc.h': No such file or directory
+  (소스 파일 '/WaitPatientDB.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
