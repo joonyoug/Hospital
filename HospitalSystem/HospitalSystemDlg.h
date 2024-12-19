@@ -34,4 +34,6 @@ protected:
 public:
 	afx_msg void OnBnClickedButtonlogin();
 	afx_msg void OnBnClickedRegister();
+
+	afx_msg void OnMenuBilling(); // 메뉴 이벤트 처리 핸들러
 };
