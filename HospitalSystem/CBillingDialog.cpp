@@ -4,6 +4,11 @@
 #include "HospitalSystem.h"
 #include "afxdialogex.h"
 #include "CBillingDialog.h"
+#include "Prescriptions.h"
+#include <fstream>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 // CBillingDialog 대화 상자
 
@@ -40,7 +45,8 @@ void CBillingDialog::DoDataExchange(CDataExchange* pDX)
     DDX_Control(pDX, IDC_STATIC_PAYMENT_DATE, m_staticPaymentDate);
     DDX_Control(pDX, IDC_STATIC_PAYMENT_PDATE, m_staticPaymentPDate);
     DDX_Control(pDX, IDC_BUTTON_PRINT_RECEIPT, m_buttonPrintReceipt);
-    DDX_Control(pDX, IDC_EDIT_MEMO, m_editMemo); // 메모 입력 필드 바인딩
+    DDX_Control(pDX, IDC_STATIC_MEMO, m_staticMemo);
+
 }
 
 
@@ -48,10 +54,10 @@ BEGIN_MESSAGE_MAP(CBillingDialog, CDialogEx)
 
     ON_WM_CTLCOLOR() // WM_CTLCOLOR 메시지 추가
     ON_BN_CLICKED(IDC_BUTTON_Search, &CBillingDialog::OnBnClickedButtonSearch)
-    ON_BN_CLICKED(IDC_BUTTON_SAVE_MEMO, &CBillingDialog::OnBnClickedButtonSaveMemo)
     ON_BN_CLICKED(IDC_BUTTON_MARK_PAID, &CBillingDialog::OnBnClickedButtonMarkPaid)
     ON_BN_CLICKED(IDC_BUTTON_PRINT_RECEIPT, &CBillingDialog::OnBnClickedButtonPrintReceipt)
     ON_COMMAND(ID_32772, &CBillingDialog::On32772)
+
 END_MESSAGE_MAP()
 
 
@@ -64,8 +70,30 @@ MYSQL* CBillingDialog::ConnectToDatabase()
         return nullptr;
     }
 
+    // 자동 재연결 설정
+    bool reconnect = true;
+    mysql_options(conn, MYSQL_OPT_RECONNECT, &reconnect);
+
+    // config.json 파일 읽기
+    std::ifstream configFile("config.json");
+    if (!configFile.is_open()) {
+        AfxMessageBox(L"config.json 파일을 열 수 없습니다.");
+        return nullptr;
+    }
+
+    // JSON 데이터 파싱
+    nlohmann::json config;
+    configFile >> config;
+    configFile.close();
+
+    std::string host = config["database"]["host"];
+    std::string user = config["database"]["username"];
+    std::string password = config["database"]["password"];
+    std::string schema = config["database"]["schema"];
+    std::string charset = config["database"]["charset"];
+
     // MySQL 서버에 연결
-    if (!mysql_real_connect(conn, "34.64.187.178", "root", "Dhalstjs!", "EMR", 3306, nullptr, 0)) {
+    if (!mysql_real_connect(conn, host.c_str(), user.c_str(), password.c_str(), schema.c_str(), 3306, nullptr, 0)) {
         CString error(mysql_error(conn));
         AfxMessageBox(L"DB 연결 실패: " + error);
         mysql_close(conn);
@@ -215,14 +243,10 @@ void CBillingDialog::OnBnClickedButtonSearch()
     }
 
     LoadChartRecords(residentNumber); // 진료 내역 불러오기;
-
-    // 환자 정보 불러오기
-    LoadPatientInfo(residentNumber);
-
-    LoadPrescriptions(residentNumber);  // 처방전 데이터 불러오기
-
-    // 진료 날짜 및 결제 날짜 표시
-    LoadPaymentDates(residentNumber);
+    LoadPatientInfo(residentNumber); // 환자 정보 불러오기
+    LoadPrescriptions(residentNumber);  // 처방전 데이터 불러오기   
+    LoadPaymentDates(residentNumber); // 진료 날짜 및 결제 날짜 표시
+    LoadNotes(residentNumber); // 메모 불러오기
 }
 
 BOOL CBillingDialog::OnInitDialog()
@@ -270,44 +294,6 @@ BOOL CBillingDialog::OnInitDialog()
 
     return TRUE;
 }
-
-void CBillingDialog::OnBnClickedButtonSaveMemo()
-{
-    // TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-    if (!conn) {
-        AfxMessageBox(L"DB 연결이 설정되지 않았습니다.");
-        return;
-    }
-
-    // 주민등록번호와 메모 내용 가져오기
-    CString residentNumber, memoContent;
-    m_editSSN.GetWindowText(residentNumber);
-    m_editMemo.GetWindowText(memoContent);
-
-    if (residentNumber.IsEmpty()) {
-        AfxMessageBox(L"주민등록번호를 입력하세요.");
-        return;
-    }
-
-    if (memoContent.IsEmpty()) {
-        AfxMessageBox(L"메모 내용을 입력하세요.");
-        return;
-    }
-
-    // SQL 쿼리: 메모 내용을 payments 테이블의 notes 칼럼에 저장
-    CString query;
-    query.Format(L"UPDATE payments SET notes = '%s' WHERE resident_number = '%s'",
-        CStringA(memoContent), CStringA(residentNumber));
-
-    if (mysql_query(conn, CStringA(query)) == 0) {
-        AfxMessageBox(L"메모가 성공적으로 저장되었습니다.");
-    }
-    else {
-        CString error(mysql_error(conn));
-        AfxMessageBox(L"메모 저장 실패: " + error);
-    }
-}
-
 
 
 HBRUSH CBillingDialog::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
@@ -433,7 +419,7 @@ void CBillingDialog::LoadPrescriptions(const CString& residentNumber)
 
     // prescriptions 테이블에서 해당 주민등록번호의 데이터 불러오기
     CString query;
-    query.Format(L"SELECT date, drugs_name, notes "
+    query.Format(L"SELECT date, drugs_name, method "
         L"FROM prescriptions "
         L"WHERE resident_number = '%s'", residentNumber);
 
@@ -457,11 +443,11 @@ void CBillingDialog::LoadPrescriptions(const CString& residentNumber)
     while ((row = mysql_fetch_row(res))) {
         CString date(row[0]);
         CString drugs_name(row[1]);
-        CString notes(row[2]);
+        CString method(row[2]);
 
         m_prescriptionList.InsertItem(index, date);
         m_prescriptionList.SetItemText(index, 1, drugs_name);
-        m_prescriptionList.SetItemText(index, 2, notes);
+        m_prescriptionList.SetItemText(index, 2, method);
 
         index++;
     }
@@ -633,10 +619,10 @@ void CBillingDialog::PrintReceipt()
         {
             CString date = m_prescriptionList.GetItemText(i, 0);
             CString drugName = m_prescriptionList.GetItemText(i, 1);
-            CString notes = m_prescriptionList.GetItemText(i, 2);
+            CString method = m_prescriptionList.GetItemText(i, 2);
 
             CString line;
-            line.Format(L"날짜: %s | 처방 의약품: %s | 복용 방법: %s", date, drugName, notes);
+            line.Format(L"날짜: %s | 처방 의약품: %s | 복용 방법: %s", date, drugName, method);
             printerDC.TextOut(x, y, line);
             y -= 100; // 다음 줄로 이동
         }
@@ -654,5 +640,41 @@ void CBillingDialog::On32772()
 {
     CBillingDialog billingDialog;
     billingDialog.DoModal(); // 모달 방식으로 실행
+}
+
+
+void CBillingDialog::LoadNotes(const CString& residentNumber) {
+    if (!conn) {
+        AfxMessageBox(L"DB 연결이 설정되지 않았습니다.");
+        return;
+    }
+
+    // DB에서 notes 불러오기 쿼리
+    CString query;
+    query.Format(L"SELECT notes FROM payments WHERE resident_number = '%s'", residentNumber);
+
+    if (mysql_query(conn, CStringA(query)) != 0) {
+        CString error(mysql_error(conn));
+        AfxMessageBox(L"쿼리 실행 실패: " + error);
+        return;
+    }
+
+    MYSQL_RES* res = mysql_store_result(conn);
+    if (!res) {
+        AfxMessageBox(L"DB 결과 처리 실패");
+        return;
+    }
+
+    // DB에서 결과 읽기
+    MYSQL_ROW row = mysql_fetch_row(res);
+    if (row && row[0]) { // row가 NULL이 아니고 notes 값이 존재하면
+        CString notes = CString(row[0]);
+        m_staticMemo.SetWindowText(notes); // Static Control에 notes 표시
+    }
+    else {
+        m_staticMemo.SetWindowText(L"메모가 없습니다."); // notes가 없으면 기본값 출력
+    }
+
+    mysql_free_result(res); // 결과 해제
 }
 
