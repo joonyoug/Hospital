@@ -32,6 +32,9 @@ public:
 	// 리스트컨트롤
 	CString getDoctorId();
 	CListCtrl m_list;
+	void drawfont(CFont * font);
+
+
 	afx_msg void OnBnClickedButtonaddappointment();
 	afx_msg void OnBnClickedButtonAddpatient();
 	void drawAppointment();
