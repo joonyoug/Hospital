@@ -97,7 +97,6 @@
 #define IDC_EDIT2                       1082
 #define IDC_EDIT_frequency              1082
 #define IDC_EDIT_detailResidentNumber   1082
-#define IDC_EDIT_MEMO                   1082
 #define IDC_EDIT3                       1083
 #define IDC_EDIT_duration               1083
 #define IDC_EDIT_detailGender           1083
@@ -127,13 +126,11 @@
 #define IDC_BUTTON_MARK_PAID            1099
 #define IDC_LIST_PRESCRIPTIONS          1100
 #define IDC_BUTTON_PRINT_RECEIPT        1101
-#define IDC_BUTTON_SAVE_MEMO            1102
 #define IDC_STATIC_PATIENT_LABEL_NAME3  1103
 #define IDC_STATIC_PATIENT_LABEL_GENDER 1104
 #define IDC_STATIC_PATIENT_LABEL_BLOOD  1105
 #define IDC_STATIC_PATIENT_LABEL_NAME6  1106
 #define IDC_STATIC_PATIENT_LABEL_PHONE  1107
-#define IDC_BUTTON17                    1108
 #define IDC_STATIC_PATIENT_LABEL_EMERGENCY 1108
 #define IDC_STATIC_PATIENT_LABEL_NAME   1109
 #define IDC_STATIC_PATIENT_NAME         1110
@@ -144,6 +141,7 @@
 #define IDC_STATIC_PAYMENT_PDATE        1115
 #define IDC_STATIC_PATIENT_PHONE        1116
 #define IDC_STATIC_PATIENT_EMERGENCY    1117
+#define IDC_STATIC_MEMO                 1118
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -154,7 +152,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        146
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1118
+#define _APS_NEXT_CONTROL_VALUE         1119
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif

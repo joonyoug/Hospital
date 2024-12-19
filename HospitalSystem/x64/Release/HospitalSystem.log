@@ -1,94 +1,4 @@
-﻿  AddAppointment.cpp
-  Addpatients.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\Addpatients.cpp(74,41): warning C4101: 'e' :참조되지 않은 지역 변수입니다.
-  (소스 파일 '/Addpatients.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\Addpatients.cpp(78,37): warning C4101: 'e' :참조되지 않은 지역 변수입니다.
-  (소스 파일 '/Addpatients.cpp'을(를) 컴파일하는 중)
-  
-  AlreadyPatient.cpp
-  Appointment.cpp
-  AppointmentController.cpp
-  AppointmentDB.cpp
-  AppointmentDto.cpp
-  CBillingDialog.cpp
-  ChartHistoryController.cpp
-  ChartHistoryDB.cpp
-  ChartRecords.cpp
-  ChatHistoryDto.cpp
-  DatabaseManager.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DatabaseManager.h(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  (소스 파일 '/DatabaseManager.cpp'을(를) 컴파일하는 중)
-  
-  DBconnect.cpp
-  Dcode.cpp
-  DcodeController.cpp
-  DcodeDB.cpp
-  Decision.cpp
-  DetailPage.cpp
-  DoctorPage1.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DoctorPage1.cpp(128,26): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DoctorPage1.cpp(129,27): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DoctorPage1.cpp(182,26): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DoctorPage1.cpp(183,27): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/DoctorPage1.cpp'을(를) 컴파일하는 중)
-  
-  컴파일하고 있습니다...
-  HosipitalOffice.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\HosipitalOffice.cpp(134,21): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\HosipitalOffice.cpp(135,22): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\HosipitalOffice.cpp(136,22): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\HosipitalOffice.cpp(137,22): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 '/HosipitalOffice.cpp'을(를) 컴파일하는 중)
-  
-  HospitalSystem.cpp
-  HospitalSystemDlg.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DatabaseManager.h(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  (소스 파일 '/HospitalSystemDlg.cpp'을(를) 컴파일하는 중)
-  
-  LoginController.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DatabaseManager.h(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  (소스 파일 '/LoginController.cpp'을(를) 컴파일하는 중)
-  
-  Doctor.cpp
-  Mcode.cpp
-  McodeController.cpp
-  McodeDB.cpp
-  Patient.cpp
-  PatientController.cpp
-  PatientDb.cpp
-  PatientDto.cpp
-  Prescriptions.cpp
-  PrescriptionsController.cpp
-  PrescriptionsDB.cpp
-  SearchPage.cpp
-  SignUP.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DatabaseManager.h(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  (소스 파일 '/SignUP.cpp'을(를) 컴파일하는 중)
-  
-  SignUpController.cpp
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DatabaseManager.h(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  (소스 파일 '/SignUpController.cpp'을(를) 컴파일하는 중)
-  
-  Vaccinnations.cpp
-  VaccinnationsDB.cpp
-  컴파일하고 있습니다...
-  VaccinnationsDto.cpp
-  WaitPatient.cpp
-  WaitPatientDB.cpp
-AddAppointment.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+﻿AddAppointment.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 Addpatients.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 AlreadyPatient.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
 CBillingDialog.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
@@ -101,18 +11,9 @@ SearchPage.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTR
 SignUP.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
      C:\Users\jeong\OneDrive\바탕 화면\Hospital\x64\Release\HospitalSystem.lib 라이브러리 및 C:\Users\jeong\OneDrive\바탕 화면\Hospital\x64\Release\HospitalSystem.exp 개체를 생성하고 있습니다.
   코드를 생성하고 있습니다.
-  Previous IPDB was built with incompatible compiler, fall back to full compilation.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DatabaseManager.cpp(65): warning C4715: 'DatabaseManager::ExcuteLoginQuery': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\PatientDb.cpp(121): warning C4715: 'PatientDb::selectPatient': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\PatientDb.cpp(86): warning C4715: 'PatientDb::searchPatient': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\McodeDB.cpp(26): warning C4715: 'McodeDB::selectMcode': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\ChartHistoryDB.cpp(58): warning C4715: 'ChartHistoryDB::selectedChart': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\WaitPatientDB.cpp(43): warning C4715: 'WaitPatientDB::selectWait': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\VaccinnationsDB.cpp(38): warning C4715: 'VaccinnationsDB::selectVaccin': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\AppointmentController.cpp(13): warning C4715: 'AppointmentController::selectAppointment': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\AppointmentController.cpp(28): warning C4715: 'AppointmentController::dayAppointment': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\jeong\OneDrive\바탕 화면\Hospital\HospitalSystem\DoctorPage1.cpp(540): warning C4715: 'DoctorPage1::deleteWait': 모든 제어 경로에서 값을 반환하지는 않습니다.
-  All 2282 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  0 of 2283 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
 mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_driver.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: '' PDB를 'mysqlcppconn-static.lib(mysql_connection.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
