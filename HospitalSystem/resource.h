@@ -17,6 +17,7 @@
 #define IDD_DIALOG_AddPatient           136
 #define IDD_DIALOG_Add_Appointment      138
 #define IDR_MENU1                       141
+#define IDD_DIALOG1_Payment             144
 #define ID_Button_login                 1000
 #define IDC_EDIT_INput_Id               1001
 #define IDC_EDIT_INput_PW               1002
@@ -28,6 +29,7 @@
 #define IDC_EDIT_SignUp_Phone           1008
 #define IDC_EDIT_SignUp_Employee        1009
 #define IDC_LIST1                       1010
+#define IDC_LIST_RECORDS                1011
 #define IDC_BUTTON_AddPatient           1012
 #define IDC_BUTTON_addAppointment       1013
 #define IDC_EDIT_Name                   1014
@@ -91,9 +93,11 @@
 #define IDC_EDIT_daily_dosage           1081
 #define IDC_EDIT_detaiName              1081
 #define IDC_EDIT_srn                    1081
+#define IDC_EDIT_SSN                    1081
 #define IDC_EDIT2                       1082
 #define IDC_EDIT_frequency              1082
 #define IDC_EDIT_detailResidentNumber   1082
+#define IDC_EDIT_MEMO                   1082
 #define IDC_EDIT3                       1083
 #define IDC_EDIT_duration               1083
 #define IDC_EDIT_detailGender           1083
@@ -118,6 +122,28 @@
 #define IDC_SCROLLBAR1                  1095
 #define IDC_BUTTON9                     1096
 #define IDC_LIST2                       1097
+#define IDC_STATIC_PATIENT_LABEL_ADDRESS 1097
+#define IDC_STATIC_RESULT               1098
+#define IDC_BUTTON_MARK_PAID            1099
+#define IDC_LIST_PRESCRIPTIONS          1100
+#define IDC_BUTTON_PRINT_RECEIPT        1101
+#define IDC_BUTTON_SAVE_MEMO            1102
+#define IDC_STATIC_PATIENT_LABEL_NAME3  1103
+#define IDC_STATIC_PATIENT_LABEL_GENDER 1104
+#define IDC_STATIC_PATIENT_LABEL_BLOOD  1105
+#define IDC_STATIC_PATIENT_LABEL_NAME6  1106
+#define IDC_STATIC_PATIENT_LABEL_PHONE  1107
+#define IDC_BUTTON17                    1108
+#define IDC_STATIC_PATIENT_LABEL_EMERGENCY 1108
+#define IDC_STATIC_PATIENT_LABEL_NAME   1109
+#define IDC_STATIC_PATIENT_NAME         1110
+#define IDC_STATIC_PATIENT_ADDRESS      1111
+#define IDC_STATIC_PAYMENT_DATE         1112
+#define IDC_STATIC_PATIENT_GENDER       1113
+#define IDC_STATIC_PATIENT_BLOOD        1114
+#define IDC_STATIC_PAYMENT_PDATE        1115
+#define IDC_STATIC_PATIENT_PHONE        1116
+#define IDC_STATIC_PATIENT_EMERGENCY    1117
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -126,9 +152,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        144
+#define _APS_NEXT_RESOURCE_VALUE        146
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1098
+#define _APS_NEXT_CONTROL_VALUE         1118
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif
