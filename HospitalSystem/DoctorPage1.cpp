@@ -100,11 +100,120 @@ void DoctorPage1::setFont(CFont* font) {
 	m_listVaccin.SetFont(font);       // CComboBox
 	m_listAppointment.SetFont(font);  // CComboBox
 	m_doctorPageCal.SetFont(font);    // CMonthCalCtrl
+	m_listWait.SetFont(font);
+	drawFont(font);
 	//m_static.SetFont(font);
 	//m_static.Invalidate();  // 다시 그리기
 	//m_static.UpdateWindow(); // 즉시 업데이트
 }
+void DoctorPage1::drawFont(CFont *font) {
+	CButton* pbutton = (CButton*)GetDlgItem(IDC_BUTTON1);
+	pbutton->SetFont(font);
 
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON2);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON7);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON4);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON5);
+	pbutton->SetFont(font);
+
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON6);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON8);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON9);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON3);
+	pbutton->SetFont(font);
+
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON_OKD);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON_OKM);
+	pbutton->SetFont(font);
+
+
+	CStatic *pstatic = (CStatic*)GetDlgItem(IDC_doc_text1);
+	pstatic->SetFont(font);
+
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text2);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text3);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text4);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text5);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text6);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text7);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text8);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text9);
+	pstatic->SetFont(font);
+
+	pstatic = (CStatic*)GetDlgItem(IDC_doc_text10);
+	pstatic->SetFont(font);
+
+	//font->CreatePointFont(90, _T("MS Shell Dlg"));
+
+	CEdit* edit = (CEdit*)GetDlgItem(IDC_EDIT_Name1);
+	edit->SetFont(font);
+
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_ResidentNumber1);
+	edit->SetFont(font);
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_CC);
+	edit->SetFont(font);
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_DCode);
+	edit->SetFont(font);
+
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_Diagnoisis);
+	edit->SetFont(font);
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_Menifestitation);
+	edit->SetFont(font);
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_Name);
+	edit->SetFont(font);
+
+	
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_ResidentNumber);
+	edit->SetFont(font);
+	
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_Mcode);
+	edit->SetFont(font);
+
+	edit = (CEdit*)GetDlgItem(IDC_EDIT_Method);
+	edit->SetFont(font);
+
+
+
+
+}
 void DoctorPage1::drawMcode() {
 	m_listMcode.ModifyStyle(0, LVS_REPORT);
 	m_listMcode.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
@@ -190,6 +299,10 @@ void DoctorPage1::DrawPatient() {
 	m_patientInfo.InsertColumn(1, _T("주민번호"), LVCFMT_CENTER, 100);
 	m_patientInfo.InsertColumn(2, _T("성"), LVCFMT_CENTER, 100);
 	m_patientInfo.InsertColumn(3, _T("번호"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(0, _T("예방접종명"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(1, _T("약품명"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(2, _T("차수"), LVCFMT_CENTER, 100);
+	m_listVaccin.InsertColumn(3, _T("일자"), LVCFMT_CENTER, 100);
 
 	
 }
@@ -273,11 +386,7 @@ void DoctorPage1::drawVaccinations() {
 
 	VaccinnationsDB db;
 	std::vector<VaccinnationsDto> dto = db.selectVaccin(m_residentNumber);
-
-	m_listVaccin.InsertColumn(0, _T("예방접종명"), LVCFMT_CENTER, 100);
-	m_listVaccin.InsertColumn(1, _T("약품명"), LVCFMT_CENTER, 100);
-	m_listVaccin.InsertColumn(2, _T("차수"), LVCFMT_CENTER, 100);
-	m_listVaccin.InsertColumn(3, _T("일자"), LVCFMT_CENTER, 100);
+	m_listVaccin.DeleteAllItems();
 
 	CRect rect;
 	m_listVaccin.GetClientRect(&rect);
@@ -479,7 +588,21 @@ void DoctorPage1::OnBnClickedButtonOkd()
 	else {
 		deleteWait(resident);
 		AfxMessageBox(_T("추가"));
+		SetDlgItemText(IDC_EDIT_ResidentNumber1, _T(""));
+		SetDlgItemText(IDC_EDIT_CC, _T(""));
+		SetDlgItemText(IDC_EDIT_DCode, _T(""));
+		SetDlgItemText(IDC_EDIT_Menifestitation, _T(""));
+		SetDlgItemText(IDC_EDIT_Name1, _T(""));
+		SetDlgItemText(IDC_EDIT_DCode, _T(""));
+		SetDlgItemText(IDC_EDIT_Diagnoisis, _T(""));	
 	}
+
+	/*
+	GetDlgItemText(IDC_EDIT_ResidentNumber1, resident);
+	GetDlgItemText(IDC_EDIT_CC, cc);
+	GetDlgItemText(IDC_EDIT_DCode, dcode);
+	GetDlgItemText(IDC_EDIT_Menifestitation, meni);
+	*/
 
 }
 void DoctorPage1::drawWait() {
@@ -521,6 +644,11 @@ void DoctorPage1::OnBnClickedButtonOkm()
 		std::string(CT2A(method)),std::string(CT2A(mcode)));
 	if (check) {
 		AfxMessageBox(_T("등록"));
+		SetDlgItemText(IDC_EDIT_Name, _T(""));
+		SetDlgItemText(IDC_EDIT_ResidentNumber, _T(""));
+		SetDlgItemText(IDC_EDIT_Mcode, _T(""));
+		SetDlgItemText(IDC_EDIT_Method, _T(""));
+
 	}
 	else {
 		AfxMessageBox(_T("실패"));
@@ -551,3 +679,6 @@ void DoctorPage1::OnNMClickListWait(NMHDR* pNMHDR, LRESULT* pResult)
 	}
 	*pResult = 0;
 }
+
+
+

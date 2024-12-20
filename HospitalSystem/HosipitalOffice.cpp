@@ -35,6 +35,10 @@ BOOL HosipitalOffice::OnInitDialog()
 	drawPatient();
 	drawAppointment();
 	drawWait();
+	CFont font;
+	font.CreatePointFont(120, _T("MS Shell Dlg"));
+	drawfont(&font);
+
 
 	return TRUE;  // 초기화 완료 후 TRUE 반환
 }
@@ -63,6 +67,37 @@ BEGIN_MESSAGE_MAP(HosipitalOffice, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_SearchPatient, &HosipitalOffice::OnBnClickedButtonSearchpatient)
 	ON_NOTIFY(NM_RCLICK, IDC_LIST1, &HosipitalOffice::OnNMRClicAppointment)
 END_MESSAGE_MAP()
+
+void HosipitalOffice::drawfont(CFont* font) {
+
+	CButton* pbutton = (CButton*)GetDlgItem(IDC_BUTTON4);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BTN_1);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON2);
+	pbutton->SetFont(font);
+
+	pbutton = (CButton*)GetDlgItem(IDC_BUTTON3);
+	pbutton->SetFont(font);
+
+
+	m_list.SetFont(font);
+	m_list_wait.SetFont(font);
+	m_patientInfoList.SetFont(font);
+	
+
+
+
+
+
+
+
+
+}
+
+
 
 // HosipitalOffice 메시지 처리기
 void HosipitalOffice::OnBnClickedButtonaddappointment()

@@ -58,6 +58,7 @@ BEGIN_MESSAGE_MAP(CBillingDialog, CDialogEx)
     ON_BN_CLICKED(IDC_BUTTON_PRINT_RECEIPT, &CBillingDialog::OnBnClickedButtonPrintReceipt)
     ON_COMMAND(ID_32772, &CBillingDialog::On32772)
 
+   
 END_MESSAGE_MAP()
 
 
@@ -326,6 +327,11 @@ void CBillingDialog::OnBnClickedButtonMarkPaid()
 
     // 상태를 '완납'으로 변경하는 함수 호출
     MarkAsPaid(chartID);
+
+    // 버튼을 누른 현재 날짜를 Static Control에 표시
+    CTime currentTime = CTime::GetCurrentTime();               // 현재 날짜 및 시간 가져오기
+    CString formattedDate = currentTime.Format(L"%Y-%m-%d %H:%M:%S");   // 날짜를 "YYYY-MM-DD" 형식으로 변환
+    m_staticPaymentPDate.SetWindowText(formattedDate);
 }
 
 void CBillingDialog::MarkAsPaid(const CString& chartID)
@@ -335,45 +341,60 @@ void CBillingDialog::MarkAsPaid(const CString& chartID)
         return;
     }
 
-    // chartID 값이 비어 있는지 확인
     if (chartID.IsEmpty()) {
         AfxMessageBox(L"선택된 항목의 chart_id가 없습니다.");
         return;
     }
 
-    // chartID 값이 숫자인지 확인
     int numericChartID = _ttoi(chartID);
     if (numericChartID == 0) {
         AfxMessageBox(L"chart_id 값이 잘못되었습니다. 숫자 형태여야 합니다.");
         return;
     }
 
-    // 디버그 메시지: chartID 값 확인
-    // CString debugMessage;
-    // debugMessage.Format(L"UPDATE 실행: chartID = %d", numericChartID);
-    // AfxMessageBox(debugMessage);
+    CString residentNumber;
+    m_editSSN.GetWindowText(residentNumber);
+    if (residentNumber.IsEmpty()) {
+        AfxMessageBox(L"주민등록번호가 비어 있습니다.");
+        return;
+    }
 
+    // 현재 날짜 가져오기
+    CTime currentTime = CTime::GetCurrentTime();
+    CString formattedDate = currentTime.Format(L"%Y-%m-%d %H:%M:%S");
 
+    // 상태를 '완납'으로 변경
+    CString queryUpdateStatus;
+    queryUpdateStatus.Format(L"UPDATE decisions SET status = '완납' WHERE chart_id = '%d'", numericChartID);
 
-    // 상태를 '완납'으로 변경하는 SQL 쿼리 실행
-    CString query;
-    query.Format(L"UPDATE decisions SET status = '완납' WHERE chart_id = '%d'", numericChartID);
-
-    if (mysql_query(conn, CStringA(query)) == 0) {
+    if (mysql_query(conn, CStringA(queryUpdateStatus)) == 0) {
         AfxMessageBox(L"결제가 완료되었습니다.");
 
-
         // 리스트와 합산 금액 업데이트
-        CString residentNumber;
-        m_editSSN.GetWindowText(residentNumber);
-        LoadChartRecords(residentNumber); // 리스트 새로고침
-        UpdateTotalSum(residentNumber);   // 합산 금액 갱신
+        LoadChartRecords(residentNumber);
+        UpdateTotalSum(residentNumber);
+
     }
     else {
         CString error(mysql_error(conn));
         AfxMessageBox(L"결제 상태 변경 실패: " + error);
+        return;
+    }
+
+    // payments 테이블에 p_date 업데이트
+    CString queryUpdatePDate;
+    queryUpdatePDate.Format(L"UPDATE payments SET p_date = '%s' WHERE resident_number = '%s'", formattedDate, residentNumber);
+
+    if (mysql_query(conn, CStringA(queryUpdatePDate)) == 0) {
+        m_staticPaymentPDate.SetWindowText(formattedDate); // 성공 시 Static Control에 설정
+    }
+    else {
+        CString error(mysql_error(conn));
+        AfxMessageBox(L"`p_date` 업데이트 실패: " + error);
     }
 }
+
+
 
 void CBillingDialog::UpdateTotalSum(const CString& residentNumber)
 {
@@ -500,7 +521,7 @@ void CBillingDialog::LoadPaymentDates(const CString& residentNumber)
 
     // payments 테이블에서 date, p_date 가져오기
     CString query;
-    query.Format(L"SELECT date, p_date FROM payments WHERE resident_number = '%s'", residentNumber);
+    query.Format(L"SELECT date FROM payments WHERE resident_number = '%s'", residentNumber);
 
     if (mysql_query(conn, CStringA(query)) != 0) {
         CString error(mysql_error(conn));
@@ -517,14 +538,11 @@ void CBillingDialog::LoadPaymentDates(const CString& residentNumber)
     MYSQL_ROW row = mysql_fetch_row(res);
     if (row) {
         CString paymentDate = CString(row[0]);  // date 값
-        CString paymentPDate = CString(row[1]); // p_date 값
 
         m_staticPaymentDate.SetWindowText(paymentDate); // 데이터만 출력
-        m_staticPaymentPDate.SetWindowText(paymentPDate); // 데이터만 출력
     }
     else {
         m_staticPaymentDate.SetWindowText(L"");
-        m_staticPaymentPDate.SetWindowText(L"");
     }
 
     mysql_free_result(res);
@@ -677,4 +695,6 @@ void CBillingDialog::LoadNotes(const CString& residentNumber) {
 
     mysql_free_result(res); // 결과 해제
 }
+
+
 
