@@ -327,11 +327,6 @@ void CBillingDialog::OnBnClickedButtonMarkPaid()
 
     // 상태를 '완납'으로 변경하는 함수 호출
     MarkAsPaid(chartID);
-
-    // 버튼을 누른 현재 날짜를 Static Control에 표시
-    CTime currentTime = CTime::GetCurrentTime();               // 현재 날짜 및 시간 가져오기
-    CString formattedDate = currentTime.Format(L"%Y-%m-%d %H:%M:%S");   // 날짜를 "YYYY-MM-DD" 형식으로 변환
-    m_staticPaymentPDate.SetWindowText(formattedDate);
 }
 
 void CBillingDialog::MarkAsPaid(const CString& chartID)
@@ -393,8 +388,6 @@ void CBillingDialog::MarkAsPaid(const CString& chartID)
         AfxMessageBox(L"`p_date` 업데이트 실패: " + error);
     }
 }
-
-
 
 void CBillingDialog::UpdateTotalSum(const CString& residentNumber)
 {
