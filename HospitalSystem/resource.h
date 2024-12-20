@@ -142,6 +142,16 @@
 #define IDC_STATIC_PATIENT_PHONE        1116
 #define IDC_STATIC_PATIENT_EMERGENCY    1117
 #define IDC_STATIC_MEMO                 1118
+#define IDC_doc_text1                   1119
+#define IDC_doc_text2                   1120
+#define IDC_doc_text3                   1121
+#define IDC_doc_text4                   1122
+#define IDC_doc_text5                   1123
+#define IDC_doc_text6                   1124
+#define IDC_doc_text7                   1125
+#define IDC_doc_text8                   1126
+#define IDC_doc_text9                   1127
+#define IDC_doc_text10                  1128
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -152,7 +162,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        146
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1119
+#define _APS_NEXT_CONTROL_VALUE         1129
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif

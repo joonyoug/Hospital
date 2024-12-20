@@ -63,6 +63,9 @@ public:
 	afx_msg void OnBnClickedButtonOkm();
 	CListCtrl m_listWait;
 	bool deleteWait(CString residentNumber);
-
+	void drawFont(CFont *font);
 	afx_msg void OnNMClickListWait(NMHDR* pNMHDR, LRESULT* pResult);
+	
+
+
 };
