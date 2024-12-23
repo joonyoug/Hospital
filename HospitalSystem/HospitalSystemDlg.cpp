@@ -62,6 +62,9 @@ CHospitalSystemDlg::CHospitalSystemDlg(CWnd* pParent /*=nullptr*/)
 void CHospitalSystemDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, ID_Button_login, m_loginBtn);
+	DDX_Control(pDX, ID_Button_login, m_loginBtn);
+	DDX_Control(pDX, IDC_Register, signBtn);
 }
 
 BEGIN_MESSAGE_MAP(CHospitalSystemDlg, CDialogEx)
@@ -106,7 +109,7 @@ BOOL CHospitalSystemDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
-
+	onDrawItem();
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -121,6 +124,19 @@ void CHospitalSystemDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	{
 		CDialogEx::OnSysCommand(nID, lParam);
 	}
+}
+void CHospitalSystemDlg::onDrawItem() {
+	
+	
+	m_loginBtn.SetImage(IDB_BITMAP1);
+	signBtn.SetImage(IDB_BITMAP2);
+
+	
+
+	// 버튼 크기 자동 조정
+	
+	
+
 }
 
 // 대화 상자에 최소화 단추를 추가할 경우 아이콘을 그리려면

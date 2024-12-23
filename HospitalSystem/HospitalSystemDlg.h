@@ -34,6 +34,10 @@ protected:
 public:
 	afx_msg void OnBnClickedButtonlogin();
 	afx_msg void OnBnClickedRegister();
-
+	void onDrawItem();
 	afx_msg void OnMenuBilling(); // 메뉴 이벤트 처리 핸들러
+	
+	CMFCButton m_loginBtn;
+	CMFCButton m_signBtn;
+	CMFCButton signBtn;
 };

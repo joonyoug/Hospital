@@ -26,6 +26,8 @@ public:
 	void NotifyParent();
 	CString m_name;
 	CString m_resident;
+	CString m_s;
+
 
 	afx_msg void OnBnClickedButton1();
 };

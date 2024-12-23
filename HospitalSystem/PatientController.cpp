@@ -27,9 +27,12 @@ PatientDto PatientController::selectPatient(std::string residentNumber) {
 
     Patient patient = db.selectPatient(residentNumber);
 
-
     PatientDto dto;
-
+    if (patient.getName().empty()) {
+        dto.name = "-1";
+        return dto;
+    }
+    
     dto.address = patient.getAddress();
     dto.bloodType = patient.getBloodType();
     dto.dosingList = patient.getDosingList();

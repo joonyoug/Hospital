@@ -18,6 +18,13 @@
 #define IDD_DIALOG_Add_Appointment      138
 #define IDR_MENU1                       141
 #define IDD_DIALOG1_Payment             144
+#define IDB_BITMAP3                     152
+#define IDB_BITMAP1                     159
+#define IDB_BITMAP2                     160
+#define IDB_BITMAP4                     162
+#define IDB_BITMAP5                     163
+#define IDB_BITMAP6                     164
+#define IDB_BITMAP7                     165
 #define ID_Button_login                 1000
 #define IDC_EDIT_INput_Id               1001
 #define IDC_EDIT_INput_PW               1002
@@ -94,6 +101,8 @@
 #define IDC_EDIT_detaiName              1081
 #define IDC_EDIT_srn                    1081
 #define IDC_EDIT_SSN                    1081
+#define IDC_EDIT_S                      1081
+#define IDC_EDIT_                       1081
 #define IDC_EDIT2                       1082
 #define IDC_EDIT_frequency              1082
 #define IDC_EDIT_detailResidentNumber   1082
@@ -152,6 +161,9 @@
 #define IDC_doc_text8                   1126
 #define IDC_doc_text9                   1127
 #define IDC_doc_text10                  1128
+#define IDC_picPatient                  1129
+#define IDC_BTN_Clear                   1130
+#define IDC_BTN_Clear2                  1131
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -160,9 +172,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        146
+#define _APS_NEXT_RESOURCE_VALUE        166
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1129
+#define _APS_NEXT_CONTROL_VALUE         1132
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif

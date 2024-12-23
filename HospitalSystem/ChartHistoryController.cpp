@@ -2,8 +2,6 @@
 #include "ChartHistoryController.h"
 #include "ChartHistoryDB.h"
 
-
-
 bool ChartHistoryController::addChart(std::string residentNumber, std::string employeeNumber,
 	std::string date, std::string cc, std::string meni, std::vector<std::string> dcode) {	
 	ChartHistoryDB db;

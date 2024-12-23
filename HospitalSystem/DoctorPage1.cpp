@@ -60,7 +60,7 @@ BOOL DoctorPage1::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 	CFont font;
-	font.CreatePointFont(120, _T("MS Shell Dlg"));  
+	font.CreatePointFont(120, L"맑은 고딕");  
 
 	
 	setFont(&font);
@@ -87,6 +87,8 @@ BEGIN_MESSAGE_MAP(DoctorPage1, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_OKD, &DoctorPage1::OnBnClickedButtonOkd)
 	ON_BN_CLICKED(IDC_BUTTON_OKM, &DoctorPage1::OnBnClickedButtonOkm)
 	ON_NOTIFY(NM_CLICK, IDC_LIST2, &DoctorPage1::OnNMClickListWait)
+	ON_BN_CLICKED(IDC_BTN_Clear, &DoctorPage1::OnBnClickedBtnClear)
+	ON_BN_CLICKED(IDC_BTN_Clear2, &DoctorPage1::OnBnClickedBtnClear2)
 END_MESSAGE_MAP()
 
 
@@ -210,25 +212,30 @@ void DoctorPage1::drawFont(CFont *font) {
 	edit = (CEdit*)GetDlgItem(IDC_EDIT_Method);
 	edit->SetFont(font);
 
+	CButton* mbutton = (CButton*)GetDlgItem(IDC_BUTTON4);
+	
+	CBitmap bitmpa;
+
+	bitmpa.LoadBitmap(IDB_BITMAP3);
+
+	mbutton->SetBitmap(bitmpa);
 
 
 
 }
 void DoctorPage1::drawMcode() {
 	m_listMcode.ModifyStyle(0, LVS_REPORT);
-	m_listMcode.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
-
-
-	m_listMcode.InsertColumn(0, _T("코드"), LVCFMT_CENTER, 100);
-	m_listMcode.InsertColumn(1, _T("이름"), LVCFMT_CENTER, 100);
-	
+	m_listMcode.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); 
 
 	CRect rect;
 	m_listMcode.GetClientRect(&rect);
-	int width = rect.Width();
-	int otherColumnsWidth = 100 * 1;
-	m_listMcode.SetColumnWidth(1, width - otherColumnsWidth);
+	int totoalWidth = rect.Width();
 
+	int columWidth = totoalWidth / 2;
+
+	m_listMcode.InsertColumn(0, _T("코드"), LVCFMT_CENTER, columWidth);
+	m_listMcode.InsertColumn(1, _T("이름"), LVCFMT_CENTER, columWidth);
+	
 	McodeController dc;
 	std::vector<Mcode> mcode = dc.selectMcode();
 
@@ -439,7 +446,7 @@ void DoctorPage1::OnNMClickListappointment(NMHDR* pNMHDR, LRESULT* pResult)
 		drawPatientInfo(m_listAppointment.GetItemText(selected,0));
 		drawChartHistory();
 		drawVaccinations();
-		m_cc = std::string(CT2A(m_listAppointment.GetItemText(selected, 1)));
+		m_symtones = m_listAppointment.GetItemText(selected, 1);
 	}
 	*pResult = 0;
 }
@@ -489,7 +496,7 @@ void DoctorPage1::OnNMClickListPatientinformation(NMHDR* pNMHDR, LRESULT* pResul
 	SetDlgItemText(IDC_EDIT_ResidentNumber1, CString(m_residentNumber.c_str()));
 	SetDlgItemText(IDC_EDIT_ResidentNumber, CString(m_residentNumber.c_str()));
 
-	SetDlgItemText(IDC_EDIT_CC, CString(m_cc.c_str()));
+	SetDlgItemText(IDC_EDIT_CC, CString(m_symtones));
 
 
 	*pResult = 0;
@@ -523,8 +530,7 @@ void DoctorPage1::drawDayAppointment(std::vector<AppointmentDto> dto) {
 	m_listAppointment.DeleteAllItems();
 
 	// 컬럼 설정
-	m_listAppointment.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
-	m_listAppointment.InsertColumn(1, _T("증상"), LVCFMT_CENTER, 100);
+	
 
 	// 열 너비 설정
 	CRect rect;
@@ -587,7 +593,7 @@ void DoctorPage1::OnBnClickedButtonOkd()
 	}
 	else {
 		deleteWait(resident);
-		AfxMessageBox(_T("추가"));
+		AfxMessageBox(_T("진단서 등록"));
 		SetDlgItemText(IDC_EDIT_ResidentNumber1, _T(""));
 		SetDlgItemText(IDC_EDIT_CC, _T(""));
 		SetDlgItemText(IDC_EDIT_DCode, _T(""));
@@ -609,12 +615,15 @@ void DoctorPage1::drawWait() {
 	m_listWait.ModifyStyle(0, LVS_REPORT); // 리포트 뷰 스타일 설정
 	m_listWait.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
 	m_listWait.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
-
+	m_listWait.InsertColumn(1, _T("증상"), LVCFMT_CENTER, 100);
 	WaitPatientDB db;
 	std::vector<WaitPatient> dto = db.selectWait();
-	std::cout << dto.size() << std::endl;
+
+	//std::cout << dto.size() << std::endl;
 	for (int i = 0;i < dto.size();i++) {
 		m_listWait.InsertItem(i, CString(dto[i].getName().c_str()));
+		m_listWait.SetItemText(i,1, CString(dto[i].getSymtones().c_str()));
+
 	}
 }
 void DoctorPage1::OnBnClickedButtonOkm()
@@ -643,7 +652,7 @@ void DoctorPage1::OnBnClickedButtonOkm()
 	bool check = ppc.addPrescriptions(std::string(CT2A(residentNumber)), std::string(CT2A(doctorId)), ss.str(),
 		std::string(CT2A(method)),std::string(CT2A(mcode)));
 	if (check) {
-		AfxMessageBox(_T("등록"));
+		AfxMessageBox(_T("처방전 등록"));
 		SetDlgItemText(IDC_EDIT_Name, _T(""));
 		SetDlgItemText(IDC_EDIT_ResidentNumber, _T(""));
 		SetDlgItemText(IDC_EDIT_Mcode, _T(""));
@@ -664,6 +673,8 @@ bool DoctorPage1::deleteWait(CString residentNumber) {
 
 	for (int i = 0;i < dto.size();i++) {
 		m_listWait.InsertItem(i, CString(dto[i].getName().c_str()));
+		m_listWait.SetItemText(i, 1, CString(dto[i].getSymtones().c_str()));
+
 	}
 }
 
@@ -675,10 +686,24 @@ void DoctorPage1::OnNMClickListWait(NMHDR* pNMHDR, LRESULT* pResult)
 		drawPatientInfo(m_listWait.GetItemText(selected, 0));
 		drawChartHistory();
 		drawVaccinations();
-		
+		m_symtones = m_listWait.GetItemText(selected, 1);
+
 	}
 	*pResult = 0;
 }
 
 
 
+
+
+void DoctorPage1::OnBnClickedBtnClear()
+{
+	SetDlgItemText(IDC_EDIT_DCode, _T(""));
+
+}
+
+
+void DoctorPage1::OnBnClickedBtnClear2()
+{
+	SetDlgItemText(IDC_EDIT_Mcode, _T(""));
+}

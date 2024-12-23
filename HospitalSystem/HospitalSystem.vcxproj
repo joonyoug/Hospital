@@ -291,12 +291,26 @@
     <ResourceCompile Include="HospitalSystem.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="config.json" />
     <None Include="packages.config" />
+    <None Include="resource.hm" />
     <None Include="res\HospitalSystem.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\appointmentpic.bmp" />
+    <Image Include="res\bitloginButton.bmp" />
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bitmap2.bmp" />
+    <Image Include="res\Button.png" />
     <Image Include="res\HospitalSystem.ico" />
+    <Image Include="res\loginBTN.bmp" />
+    <Image Include="res\loginButton.bmp" />
+    <Image Include="res\patientInfo.bmp" />
+    <Image Include="res\prePayPic.bmp" />
+    <Image Include="res\signBTN.bmp" />
+    <Image Include="res\waitpic.bmp" />
+    <Image Include="res\사본 -Button.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

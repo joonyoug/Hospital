@@ -43,17 +43,20 @@ void SearchPage::OnBnClickedButtonSearch()
 
 	PatientController pt;
 	PatientDto dto = pt.selectPatient(std::string(CT2A(residentNum)));
+	if (dto.name == "-1") {
+		AfxMessageBox(_T("없는환자입니다."));
+	}
+	else {
+		SetDlgItemText(IDC_EDIT_searchAddr, CString(dto.address.c_str()));
+		SetDlgItemText(IDC_EDIT_searchBloody, CString(dto.bloodType.c_str()));
+		SetDlgItemText(IDC_EDIT_searchDosing, CString(dto.dosingList.c_str()));
+		SetDlgItemText(IDC_EDIT_searchGender, CString(dto.gender.c_str()));
+		SetDlgItemText(IDC_EDIT_searchlEmer, CString(dto.emergencyNumber.c_str()));
+		SetDlgItemText(IDC_EDIT_searchlResidentNumber, CString(dto.residentNumber.c_str()));
+		SetDlgItemText(IDC_EDIT_SearchName, CString(dto.name.c_str()));
+		SetDlgItemText(IDC_EDIT_searchPhone, CString(dto.phone.c_str()));
 
-	SetDlgItemText(IDC_EDIT_searchAddr, CString(dto.address.c_str()));
-	SetDlgItemText(IDC_EDIT_searchBloody, CString(dto.bloodType.c_str()));
-	SetDlgItemText(IDC_EDIT_searchDosing, CString(dto.dosingList.c_str()));
-	SetDlgItemText(IDC_EDIT_searchGender, CString(dto.gender.c_str()));
-	SetDlgItemText(IDC_EDIT_searchlEmer, CString(dto.emergencyNumber.c_str()));
-	SetDlgItemText(IDC_EDIT_searchlResidentNumber, CString(dto.residentNumber.c_str()));
-	SetDlgItemText(IDC_EDIT_SearchName, CString(dto.name.c_str()));
-	SetDlgItemText(IDC_EDIT_searchPhone, CString(dto.phone.c_str()));
-	
-
+	}
 
 
 }

@@ -30,15 +30,16 @@ CString HosipitalOffice::getDoctorId() {
 }
 BOOL HosipitalOffice::OnInitDialog()
 {	
+	
 	CDialogEx::OnInitDialog();  // 기본 초기화
 	SetDlgItemText(IDC_STATIC_ID, doctorId);
 	drawPatient();
 	drawAppointment();
 	drawWait();
 	CFont font;
-	font.CreatePointFont(120, _T("MS Shell Dlg"));
+	font.CreatePointFont(120, _T("맑은 고딕"));
 	drawfont(&font);
-
+	drawItem();
 
 	return TRUE;  // 초기화 완료 후 TRUE 반환
 }
@@ -53,6 +54,7 @@ void HosipitalOffice::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST3, m_patientInfoList);
 	DDX_Control(pDX, IDC_LIST_wait, m_list_wait);
 	DDX_Control(pDX, IDC_MONTHCALENDAR1, m_officePageCal);
+	
 }
 BEGIN_MESSAGE_MAP(HosipitalOffice, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_addAppointment, &HosipitalOffice::OnBnClickedButtonaddappointment)
@@ -70,17 +72,22 @@ END_MESSAGE_MAP()
 
 void HosipitalOffice::drawfont(CFont* font) {
 
-	CButton* pbutton = (CButton*)GetDlgItem(IDC_BUTTON4);
-	pbutton->SetFont(font);
+	//CButton* pbutton;
+	
 
-	pbutton = (CButton*)GetDlgItem(IDC_BTN_1);
-	pbutton->SetFont(font);
+	//pbutton = (CButton*)GetDlgItem(IDC_BTN_1);
+//	pbutton->SetFont(font);
 
-	pbutton = (CButton*)GetDlgItem(IDC_BUTTON2);
-	pbutton->SetFont(font);
+	//pbutton = (CButton*)GetDlgItem(IDC_BUTTON2);
+	//pbutton->SetFont(font);
 
-	pbutton = (CButton*)GetDlgItem(IDC_BUTTON3);
-	pbutton->SetFont(font);
+	//pbutton = (CButton*)GetDlgItem(IDC_BTN_1);
+	//pbutton->SetFont(font);
+	//CRect rect;
+	//pbutton->GetClientRect(&rect);
+	//std::cout << rect.Width() << std::endl;
+	//std::cout << rect.Height() << std::endl;
+
 
 
 	m_list.SetFont(font);
@@ -88,13 +95,9 @@ void HosipitalOffice::drawfont(CFont* font) {
 	m_patientInfoList.SetFont(font);
 	
 
-
-
-
-
-
-
-
+}
+void HosipitalOffice::drawItem() {
+	
 }
 
 
@@ -128,12 +131,14 @@ void HosipitalOffice::drawWait() {
 	m_list_wait.ModifyStyle(0, LVS_REPORT); // 리포트 뷰 스타일 설정
 	m_list_wait.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT); // 확장 스타일 설정
 	m_list_wait.InsertColumn(0, _T("이름"), LVCFMT_CENTER, 100);
-
+	m_list_wait.InsertColumn(1, _T("증상"), LVCFMT_CENTER, 100);
 	WaitPatientDB db;
 	std::vector<WaitPatient> dto = db.selectWait();
 	std::cout << dto.size() << std::endl;
 	for (int i = 0;i < dto.size();i++) {
 		m_list_wait.InsertItem(i, CString(dto[i].getName().c_str()));
+		m_list_wait.SetItemText(i, 1, CString(dto[i].getSymtones().c_str()));
+
 	}
 }
 void HosipitalOffice::drawAppointment() {
@@ -200,10 +205,10 @@ void HosipitalOffice::OnNMClickListAppointment(NMHDR* pNMHDR, LRESULT* pResult)
 
 	*pResult = 0;
 }
-void HosipitalOffice::UpdateWait(CString name) {
-	
-    int index = m_list_wait.InsertItem(m_list_wait.GetItemCount(), name);
-	
+void HosipitalOffice::UpdateWait(CString name,CString symtons) {
+
+     int cnt=m_list_wait.InsertItem(m_list_wait.GetItemCount(), name);
+	 m_list_wait.SetItemText(cnt,1,symtons);
 }
 
 
@@ -241,19 +246,12 @@ void HosipitalOffice::UpdatePatientInfo(std::string name)
 
 void HosipitalOffice::OnNMClickListPatientInfo(NMHDR* pNMHDR, LRESULT* pResult)
 {
-	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
-
-	
+	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);	
 	detailPatient();
-
-	
 	
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	*pResult = 0;
 
-
-
-	
 }
 
 
@@ -347,8 +345,6 @@ CString HosipitalOffice::getTime() {
 
 	// 날짜가 선택되지 않았을 경우 빈 문자열 반환
 	return _T("");
-
-
 }
 
 
@@ -374,16 +370,17 @@ void HosipitalOffice::OnNMRClicAppointment(NMHDR* pNMHDR, LRESULT* pResult)
 	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 
-	CString name;
+	CString name,symtons;
 
 	int selected = pNMItemActivate->iItem;
 	if (selected != -1) {
 		name=m_list.GetItemText(selected, 0);
+		symtons = m_list.GetItemText(selected, 1);
 		PatientController db;
 		PatientDto dto=db.searchPatient(std::string(CT2A(name)));
-		UpdateWait(CString(dto.name.c_str()));
+		UpdateWait(CString(dto.name.c_str()),symtons);
 		WaitPatientDB pdb;
-		pdb.addWait(dto.name.c_str(), dto.residentNumber.c_str());
+		pdb.addWait(dto.name.c_str(), dto.residentNumber.c_str(),std::string(CT2A(symtons)));
 	}
 	*pResult = 0;
 }

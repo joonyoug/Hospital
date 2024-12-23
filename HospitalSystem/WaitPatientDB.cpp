@@ -29,7 +29,8 @@ std::vector<WaitPatient> WaitPatientDB:: selectWait() {
 		while (res->next()) {
 			dto.push_back(WaitPatient(
 				res->getString("name").asStdString(),
-				res->getString("resident_number").asStdString()
+				res->getString("resident_number").asStdString(),
+				res->getString("symptoms").asStdString()
 			));
 		}
 		delete pstmt;
@@ -41,14 +42,16 @@ std::vector<WaitPatient> WaitPatientDB:: selectWait() {
 		std::cout << e.what() << std::endl;
 	}
 }
-bool WaitPatientDB::addWait(std::string name, std::string resident) {
+bool WaitPatientDB::addWait(std::string name, std::string resident,std::string s) {
 
-	std::string query = "insert into a_list (name,resident_number) values(?,?)";
+	std::string query = "insert into a_list (name,resident_number,symptoms) values(?,?,?)";
 	sql::PreparedStatement* pstmt = nullptr;
 	try {
 		pstmt = conn->prepareStatement(query);
 		pstmt->setString(1, name);
 		pstmt->setString(2, resident);
+		pstmt->setString(3, s);
+
 		pstmt->executeQuery();
 		delete pstmt;
 		

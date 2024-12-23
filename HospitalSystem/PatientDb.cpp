@@ -92,6 +92,7 @@ Patient PatientDb::selectPatient(std::string residentNumber) {
 		pstmt = conn->prepareStatement(query);
 		pstmt->setString(1,residentNumber);
 		sql::ResultSet* res = pstmt->executeQuery();
+		Patient pt; 
 		
 		while (res->next()) {			
 
@@ -108,8 +109,9 @@ Patient PatientDb::selectPatient(std::string residentNumber) {
 			delete res;
 			delete pstmt;
 			return patient;
-
 		}
+		return pt;
+
 	}
 	catch (sql::SQLException e) {
 	

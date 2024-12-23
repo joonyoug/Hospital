@@ -319,9 +319,49 @@
       <Filter>리소스 파일</Filter>
     </None>
     <None Include="packages.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="resource.hm">
+      <Filter>헤더 파일</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\HospitalSystem.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Button.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\사본 -Button.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\loginButton.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bitloginButton.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\loginBTN.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\signBTN.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\patientInfo.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\prePayPic.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\appointmentpic.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\waitpic.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

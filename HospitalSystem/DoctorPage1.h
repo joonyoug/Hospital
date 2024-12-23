@@ -33,7 +33,7 @@ public:
 	CListCtrl m_ChartHistroy;
 	CListCtrl m_listDcode;
 	CListCtrl m_listMcode;
-	
+
 	void drawPatientInfo(CString name);
 	void setResidentNumber(std::string residentNumber);
 	void drawDcode();
@@ -62,10 +62,10 @@ public:
 	afx_msg void OnBnClickedButtonOkd();
 	afx_msg void OnBnClickedButtonOkm();
 	CListCtrl m_listWait;
+	CString m_symtones;
 	bool deleteWait(CString residentNumber);
 	void drawFont(CFont *font);
 	afx_msg void OnNMClickListWait(NMHDR* pNMHDR, LRESULT* pResult);
-	
-
-
+	afx_msg void OnBnClickedBtnClear();
+	afx_msg void OnBnClickedBtnClear2();
 };

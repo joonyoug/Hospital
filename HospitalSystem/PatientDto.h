@@ -12,5 +12,7 @@ public:
 	std::string dosingList;
 	std::string bloodType;
 	PatientDto::PatientDto() {}
+	bool isEmpty();
+
 };
 

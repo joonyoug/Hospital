@@ -33,8 +33,6 @@ public:
 	CString getDoctorId();
 	CListCtrl m_list;
 	void drawfont(CFont * font);
-
-
 	afx_msg void OnBnClickedButtonaddappointment();
 	afx_msg void OnBnClickedButtonAddpatient();
 	void drawAppointment();
@@ -46,7 +44,7 @@ public:
 	afx_msg void OnNMClickListPatientInfo(NMHDR* pNMHDR, LRESULT* pResult);
 	CListCtrl m_list_wait;
 	void drawWait();
-	void UpdateWait(CString name);
+	void UpdateWait(CString name,CString symtons);
 	afx_msg void OnBnClickedBtnalreadypatient();
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 	afx_msg void OnMenuDoctor();
@@ -60,4 +58,6 @@ public:
 	afx_msg void OnDestroy();
 	afx_msg void OnBnClickedButtonSearchpatient();
 	afx_msg void OnNMRClicAppointment(NMHDR* pNMHDR, LRESULT* pResult);
+	void drawItem();
+
 };

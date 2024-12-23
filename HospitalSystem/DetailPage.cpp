@@ -38,16 +38,21 @@ void DetailPage::drawDetail() {
 	PatientController pc;
 	PatientDto dt = pc.selectPatient(std::string(CT2A(residentNumber)));
 	
-	std::cout << dt.name << 1 << std::endl;
-	SetDlgItemText(IDC_EDIT_detaiName, CString(dt.name.c_str()));
-	SetDlgItemText(IDC_EDIT_blood_type, CString(dt.bloodType.c_str()));
-	SetDlgItemText(IDC_EDIT_detailResidentNumber, CString(dt.residentNumber.c_str()));
-	SetDlgItemText(IDC_EDIT_detailAddr, CString(dt.address.c_str()));
-	SetDlgItemText(IDC_EDIT_detailDosing, CString(dt.dosingList.c_str()));
-	SetDlgItemText(IDC_EDIT_detailEmer, CString(dt.emergencyNumber.c_str()));
-	SetDlgItemText(IDC_EDIT_detailGender, CString(dt.gender.c_str()));
-	SetDlgItemText(IDC_EDIT_detailBloody, CString(dt.bloodType.c_str()));
-	SetDlgItemText(IDC_EDIT_detailPhone, CString(dt.phone.c_str()));
+	if (dt.name == "-1") {
+		std::cout << "asd";
+		AfxMessageBox(_T("없는 환자입니다."));
+	}
+	else {
+		SetDlgItemText(IDC_EDIT_detaiName, CString(dt.name.c_str()));
+		SetDlgItemText(IDC_EDIT_blood_type, CString(dt.bloodType.c_str()));
+		SetDlgItemText(IDC_EDIT_detailResidentNumber, CString(dt.residentNumber.c_str()));
+		SetDlgItemText(IDC_EDIT_detailAddr, CString(dt.address.c_str()));
+		SetDlgItemText(IDC_EDIT_detailDosing, CString(dt.dosingList.c_str()));
+		SetDlgItemText(IDC_EDIT_detailEmer, CString(dt.emergencyNumber.c_str()));
+		SetDlgItemText(IDC_EDIT_detailGender, CString(dt.gender.c_str()));
+		SetDlgItemText(IDC_EDIT_detailBloody, CString(dt.bloodType.c_str()));
+		SetDlgItemText(IDC_EDIT_detailPhone, CString(dt.phone.c_str()));
+	}
 }
 BOOL DetailPage::OnInitDialog()
 {

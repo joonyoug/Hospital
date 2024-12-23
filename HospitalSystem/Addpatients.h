@@ -30,8 +30,9 @@ public:
 	CButton m_checkbox_woman;
 	CString m_name;
 	CString m_resident;
-
+	CString m_s;
 	void setParent(CWnd* p);
 	void NotifyParent();
 
+	afx_msg void OnBnClickedButton1();
 };
