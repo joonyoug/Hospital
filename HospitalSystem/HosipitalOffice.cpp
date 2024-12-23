@@ -40,6 +40,15 @@ BOOL HosipitalOffice::OnInitDialog()
 	font.CreatePointFont(120, _T("맑은 고딕"));
 	drawfont(&font);
 	drawItem();
+	m_toolTip.Create(this);
+	m_toolTip.AddTool(&m_list, _T("왼쪽 버튼 클릭시 환자 정보 보기 오른쪽 클릭시 대기열 추가"));
+	m_toolTip.Activate(TRUE);
+
+	
+	DWORD dwStyle = m_list.GetExtendedStyle();
+	dwStyle &= ~LVS_EX_TRACKSELECT;  // LVS_EX_TRACKSELECT 스타일 제거
+	m_list.SetExtendedStyle(dwStyle);
+
 
 	return TRUE;  // 초기화 완료 후 TRUE 반환
 }
@@ -99,8 +108,6 @@ void HosipitalOffice::drawfont(CFont* font) {
 void HosipitalOffice::drawItem() {
 	
 }
-
-
 
 // HosipitalOffice 메시지 처리기
 void HosipitalOffice::OnBnClickedButtonaddappointment()
@@ -383,4 +390,15 @@ void HosipitalOffice::OnNMRClicAppointment(NMHDR* pNMHDR, LRESULT* pResult)
 		pdb.addWait(dto.name.c_str(), dto.residentNumber.c_str(),std::string(CT2A(symtons)));
 	}
 	*pResult = 0;
+}
+
+
+BOOL HosipitalOffice::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO: 여기에 특수화된 코드를 추가 및/또는 기본 클래스를 호출합니다.
+	if (m_toolTip.GetSafeHwnd())
+	{
+		m_toolTip.RelayEvent(pMsg);  // 툴팁 이벤트 전달
+	}
+	return CDialogEx::PreTranslateMessage(pMsg);
 }

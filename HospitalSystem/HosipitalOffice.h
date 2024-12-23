@@ -43,6 +43,8 @@ public:
 	CListCtrl m_patientInfoList;
 	afx_msg void OnNMClickListPatientInfo(NMHDR* pNMHDR, LRESULT* pResult);
 	CListCtrl m_list_wait;
+	CToolTipCtrl m_toolTip;
+
 	void drawWait();
 	void UpdateWait(CString name,CString symtons);
 	afx_msg void OnBnClickedBtnalreadypatient();
@@ -60,4 +62,5 @@ public:
 	afx_msg void OnNMRClicAppointment(NMHDR* pNMHDR, LRESULT* pResult);
 	void drawItem();
 
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
